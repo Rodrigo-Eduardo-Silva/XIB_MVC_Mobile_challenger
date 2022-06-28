@@ -19,9 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTJ-Qx-duz">
-                    <rect key="frame" x="0.0" y="44" width="423" height="818"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eTJ-Qx-duz">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="EeB-kk-Cti"/>
                         <outlet property="delegate" destination="-1" id="PmA-1j-y5Y"/>
@@ -38,6 +37,12 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="eTJ-Qx-duz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9Pf-H5-wvt"/>
+                <constraint firstItem="eTJ-Qx-duz" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Cjz-uV-gx2"/>
+                <constraint firstItem="eTJ-Qx-duz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="V3s-OS-eR8"/>
+                <constraint firstAttribute="trailing" secondItem="eTJ-Qx-duz" secondAttribute="trailing" id="xjF-go-KwH"/>
+            </constraints>
             <point key="canvasLocation" x="244.92753623188409" y="59.598214285714285"/>
         </view>
     </objects>
