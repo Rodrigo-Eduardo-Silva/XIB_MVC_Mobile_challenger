@@ -2,6 +2,15 @@ import Kingfisher
 import UIKit
 
 class PullrequestListTableViewCell: UITableViewCell {
+    static var filename: String {
+        return String(describing: self)
+    }
+    static var nib: UINib {
+        return UINib(nibName: filename, bundle: nil)
+    }
+    static var cell: String {
+        return "mycellpull"
+    }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var avatarPullimage: UIImageView!
@@ -26,5 +35,5 @@ class PullrequestListTableViewCell: UITableViewCell {
             avatarPullimage.kf.setImage(with: url, placeholder: nil, options: nil, completionHandler: nil)
         }
     }
-    
+
 }

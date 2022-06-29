@@ -38,4 +38,3 @@ class PullRequestListService {
         dataTask.resume()
     }
 }
-

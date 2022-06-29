@@ -22,7 +22,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
     @IBOutlet weak var image1: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-         
+
         // Initialization code
     }
 
@@ -31,7 +31,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func prepareRepositoryCell(with repository: GitRepository) {
         repositoryNameLabel.text = repository.name
         descriptionLabel.text = repository.description

@@ -5,4 +5,3 @@ struct User: Codable {
     var body: String?
     var html_url: String
 }
-
