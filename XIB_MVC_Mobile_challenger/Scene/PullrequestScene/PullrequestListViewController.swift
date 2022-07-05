@@ -1,26 +1,15 @@
-
-
 import UIKit
 
 class PullrequestListViewController: UIViewController {
-    
+
     @IBOutlet weak var tableView: UITableView!
     var pullrequest: [PullRequest] = []
     var pullmodel: PullRequestListModel?
-    var teste : [String] = [
-        "Rodrigo",
-        "Rodrigo",
-        "Rodrigo",
-        "Rodrigo",
-        "Rodrigo",
-        "Rodrigo",
-    ]
-    
     init(model: PullRequestListModel) {
         self.pullmodel = model
         super.init(nibName: "PullrequestListViewController", bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -81,9 +70,9 @@ extension PullrequestListViewController: UITableViewDataSource {
         cell.preparePullrequest(with: pullrequestCell)
         return cell
     }
-    
+
 }
 
 extension PullrequestListViewController: UITableViewDelegate {
-  
+
 }

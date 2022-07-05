@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D191AE18-4C3D-4353-8113-31ACF9193EA1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XIB_MVC_Mobile_challenger/Scene/RepositoriesScene/RepositoriesListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C1510D80-27F9-4290-AE3E-3CDE925B02C7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -66,54 +50,6 @@
             endingLineNumber = "21"
             landmarkName = "showPullrequest(repository:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "411E8811-F762-4197-96CD-351EC60F80BA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XIB_MVC_Mobile_challenger/Scene/PullrequestScene/PullrequestListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "init(model:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "411E8811-F762-4197-96CD-351EC60F80BA - bf7257cf327e3b31"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "XIB_MVC_Mobile_challenger.PullrequestListViewController.__allocating_init(model: XIB_MVC_Mobile_challenger.PullRequestListModel) -&gt; XIB_MVC_Mobile_challenger.PullrequestListViewController"
-                  moduleName = "XIB_MVC_Mobile_challenger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rodrigoeduardosilva/Swift_Dev/XIB_MVC_Mobile_challenger/XIB_MVC_Mobile_challenger/Scene/PullrequestScene/PullrequestListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "411E8811-F762-4197-96CD-351EC60F80BA - fc0b0b280e21caeb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "XIB_MVC_Mobile_challenger.PullrequestListViewController.init(model: XIB_MVC_Mobile_challenger.PullRequestListModel) -&gt; XIB_MVC_Mobile_challenger.PullrequestListViewController"
-                  moduleName = "XIB_MVC_Mobile_challenger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rodrigoeduardosilva/Swift_Dev/XIB_MVC_Mobile_challenger/XIB_MVC_Mobile_challenger/Scene/PullrequestScene/PullrequestListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "7"
-                  endingLineNumber = "7"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

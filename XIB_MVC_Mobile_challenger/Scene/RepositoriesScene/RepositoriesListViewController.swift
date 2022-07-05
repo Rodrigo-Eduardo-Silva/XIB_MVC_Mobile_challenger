@@ -1,6 +1,6 @@
 import UIKit
 
-class RepositoriesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RepositoriesListViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     var model = RepositoriesListModel()
     var repositories: [GitRepository] {
@@ -19,12 +19,12 @@ class RepositoriesListViewController: UIViewController, UITableViewDataSource, U
     func showPullrequest(repository: GitRepository) {
         let repository = repositories[tableview.indexPathForSelectedRow!.row]
         let viewController = PullrequestListViewController.create(repository: repository)
-        viewController.modalPresentationStyle = .fullScreen
+        viewController.modalPresentationStyle  = .fullScreen
         navigationController?.pushViewController(viewController, animated: true)
-        self.present(viewController, animated: true, completion: nil)
     }
-
-    // MARK: - Table view data source
+}
+// MARK: - Table view data source
+extension RepositoriesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositories.count
     }
@@ -37,7 +37,9 @@ class RepositoriesListViewController: UIViewController, UITableViewDataSource, U
         cell.prepareRepositoryCell(with: repositoryCell)
         return cell
     }
-    // MARK: - Table view delegate
+}
+// MARK: - Table view delegate
+extension RepositoriesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let repository = repositories[indexPath.row]
         showPullrequest(repository: repository)
