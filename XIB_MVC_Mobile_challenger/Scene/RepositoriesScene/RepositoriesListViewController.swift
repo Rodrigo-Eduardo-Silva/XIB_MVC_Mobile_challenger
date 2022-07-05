@@ -11,14 +11,17 @@ class RepositoriesListViewController: UIViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
+        tableview.dataSource = self
         tableview.register(RepositoriesListTableViewCell.nib, forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
         model.delegate = self
         model.loadRepositories()
     }
     func showPullrequest(repository: GitRepository) {
         let repository = repositories[tableview.indexPathForSelectedRow!.row]
-        let viewController = PullrequestListTableViewController.create(repository: repository)
+        let viewController = PullrequestListViewController.create(repository: repository)
+        viewController.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(viewController, animated: true)
+        self.present(viewController, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source

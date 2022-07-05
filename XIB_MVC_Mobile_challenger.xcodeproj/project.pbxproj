@@ -23,12 +23,12 @@
 		333B3A4B286146EA000BF8D1 /* RepositoriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333B3A49286146EA000BF8D1 /* RepositoriesListViewController.xib */; };
 		333B3A4E28614CEC000BF8D1 /* RepositoriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B3A4C28614CEC000BF8D1 /* RepositoriesListTableViewCell.swift */; };
 		333B3A4F28614CEC000BF8D1 /* RepositoriesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333B3A4D28614CEC000BF8D1 /* RepositoriesListTableViewCell.xib */; };
-		333CD3B8286A917F00271368 /* PullrequestListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CD3B6286A917F00271368 /* PullrequestListTableViewController.swift */; };
-		333CD3B9286A917F00271368 /* PullrequestListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333CD3B7286A917F00271368 /* PullrequestListTableViewController.xib */; };
 		333CD3BD286A926A00271368 /* PullrequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CD3BC286A926900271368 /* PullrequestService.swift */; };
 		333CD3BF286A95CF00271368 /* PullrequestListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CD3BE286A95CF00271368 /* PullrequestListModel.swift */; };
 		333CD3C2286A98F400271368 /* PullrequestListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CD3C0286A98F400271368 /* PullrequestListTableViewCell.swift */; };
 		333CD3C3286A98F400271368 /* PullrequestListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333CD3C1286A98F400271368 /* PullrequestListTableViewCell.xib */; };
+		334434112873A97100B0F3B6 /* PullrequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344340F2873A97100B0F3B6 /* PullrequestListViewController.swift */; };
+		334434122873A97100B0F3B6 /* PullrequestListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334434102873A97100B0F3B6 /* PullrequestListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,12 +49,12 @@
 		333B3A49286146EA000BF8D1 /* RepositoriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListViewController.xib; sourceTree = "<group>"; };
 		333B3A4C28614CEC000BF8D1 /* RepositoriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListTableViewCell.swift; sourceTree = "<group>"; };
 		333B3A4D28614CEC000BF8D1 /* RepositoriesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListTableViewCell.xib; sourceTree = "<group>"; };
-		333CD3B6286A917F00271368 /* PullrequestListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListTableViewController.swift; sourceTree = "<group>"; };
-		333CD3B7286A917F00271368 /* PullrequestListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullrequestListTableViewController.xib; sourceTree = "<group>"; };
 		333CD3BC286A926900271368 /* PullrequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestService.swift; sourceTree = "<group>"; };
 		333CD3BE286A95CF00271368 /* PullrequestListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListModel.swift; sourceTree = "<group>"; };
 		333CD3C0286A98F400271368 /* PullrequestListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListTableViewCell.swift; sourceTree = "<group>"; };
 		333CD3C1286A98F400271368 /* PullrequestListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullrequestListTableViewCell.xib; sourceTree = "<group>"; };
+		3344340F2873A97100B0F3B6 /* PullrequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListViewController.swift; sourceTree = "<group>"; };
+		334434102873A97100B0F3B6 /* PullrequestListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullrequestListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +136,8 @@
 		333CD3BA286A919300271368 /* PullrequestScene */ = {
 			isa = PBXGroup;
 			children = (
-				333CD3B6286A917F00271368 /* PullrequestListTableViewController.swift */,
-				333CD3B7286A917F00271368 /* PullrequestListTableViewController.xib */,
+				3344340F2873A97100B0F3B6 /* PullrequestListViewController.swift */,
+				334434102873A97100B0F3B6 /* PullrequestListViewController.xib */,
 				333CD3C0286A98F400271368 /* PullrequestListTableViewCell.swift */,
 				333CD3C1286A98F400271368 /* PullrequestListTableViewCell.xib */,
 				333CD3BE286A95CF00271368 /* PullrequestListModel.swift */,
@@ -218,10 +218,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				333CD3B9286A917F00271368 /* PullrequestListTableViewController.xib in Resources */,
 				333B3A3F2861453B000BF8D1 /* LaunchScreen.storyboard in Resources */,
 				333CD3C3286A98F400271368 /* PullrequestListTableViewCell.xib in Resources */,
 				333B3A3C2861453B000BF8D1 /* Assets.xcassets in Resources */,
+				334434122873A97100B0F3B6 /* PullrequestListViewController.xib in Resources */,
 				333B3A4B286146EA000BF8D1 /* RepositoriesListViewController.xib in Resources */,
 				333B3A4F28614CEC000BF8D1 /* RepositoriesListTableViewCell.xib in Resources */,
 			);
@@ -241,10 +241,10 @@
 				33231EE628652F360034D6D8 /* RepositoryService.swift in Sources */,
 				333CD3C2286A98F400271368 /* PullrequestListTableViewCell.swift in Sources */,
 				333B3A4E28614CEC000BF8D1 /* RepositoriesListTableViewCell.swift in Sources */,
+				334434112873A97100B0F3B6 /* PullrequestListViewController.swift in Sources */,
 				333CD3BF286A95CF00271368 /* PullrequestListModel.swift in Sources */,
 				33231EEB286530370034D6D8 /* GitRepository.swift in Sources */,
 				333B3A332861453A000BF8D1 /* AppDelegate.swift in Sources */,
-				333CD3B8286A917F00271368 /* PullrequestListTableViewController.swift in Sources */,
 				333B3A352861453A000BF8D1 /* SceneDelegate.swift in Sources */,
 				33231EF1286530B60034D6D8 /* User.swift in Sources */,
 				33231EEF2865309D0034D6D8 /* Pullrequest.swift in Sources */,
