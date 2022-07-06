@@ -7,14 +7,32 @@ class RepositoriesListViewController: UIViewController {
         model.repositories
     }
     var totalrepositories: GitHead!
+    var label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .blue
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = "Carregando Repositórios.Aguarde..."
         tableview.delegate = self
         tableview.dataSource = self
         tableview.register(RepositoriesListTableViewCell.nib, forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
         model.delegate = self
         model.loadRepositories()
+        sideMenuButton()
+    }
+    func sideMenuButton(){
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"),
+                                                           style: .done,
+                                                           target: self,
+                                                           action: #selector(didTapMenuButton))
+      }
+    
+    @objc func didTapMenuButton() {
+        
     }
     func showPullrequest(repository: GitRepository) {
         let repository = repositories[tableview.indexPathForSelectedRow!.row]
@@ -26,6 +44,7 @@ class RepositoriesListViewController: UIViewController {
 // MARK: - Table view data source
 extension RepositoriesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.backgroundView = repositories.count == 0 ? label : nil
         return repositories.count
     }
 
@@ -43,6 +62,13 @@ extension RepositoriesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let repository = repositories[indexPath.row]
         showPullrequest(repository: repository)
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == repositories.count - 2 && !model.rechargeList && repositories.count != model.totalrepository {
+            model.currentPage += 1
+            model.loadRepositories()
+            print("Total de Repositórios: \(model.totalrepository) , Já Inclusos : \(repositories.count)")
+        }
     }
 }
 

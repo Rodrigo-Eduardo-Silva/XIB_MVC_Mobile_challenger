@@ -1,4 +1,5 @@
 import UIKit
+import SafariServices
 
 class PullrequestListViewController: UIViewController {
 
@@ -45,10 +46,11 @@ extension  PullrequestListViewController {
     static func create(repository: GitRepository) -> PullrequestListViewController {
         let model = PullRequestListModel(gitRepository: repository, service: PullRequestListService())
         let pullrequestViewController = PullrequestListViewController(model: model)
+        pullrequestViewController.title = repository.name
         return pullrequestViewController
     }
 }
-
+// MARK: - Table view data source
 extension PullrequestListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -72,7 +74,17 @@ extension PullrequestListViewController: UITableViewDataSource {
     }
 
 }
-
+// MARK: - Table view Delegate
 extension PullrequestListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pullrequest = pullmodel?.pullrequest[indexPath.row]
+        let pathURL = pullrequest?.user.html_url ?? ""
+        guard let url = URL(string: pathURL) else {
+            fatalError()
+        }
+        let webviewController = SFSafariViewController(url: url)
+        present(webviewController, animated: true, completion: nil)
+    }
 
 }
