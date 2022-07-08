@@ -22,18 +22,7 @@ class RepositoriesListViewController: UIViewController {
         tableview.register(RepositoriesListTableViewCell.nib, forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
         model.delegate = self
         model.loadRepositories()
-        sideMenuButton()
-    }
-    func sideMenuButton(){
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"),
-                                                           style: .done,
-                                                           target: self,
-                                                           action: #selector(didTapMenuButton))
-      }
-    
-    @objc func didTapMenuButton() {
-        
-    }
+}
     func showPullrequest(repository: GitRepository) {
         let repository = repositories[tableview.indexPathForSelectedRow!.row]
         let viewController = PullrequestListViewController.create(repository: repository)
