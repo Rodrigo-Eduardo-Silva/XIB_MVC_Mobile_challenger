@@ -9,7 +9,7 @@ class ContainerViewController: UIViewController {
     private var menuState: MenuState = .closed
     let menuVC = MenuViewController()
     let homeVC = HomeViewController()
-    let RepositoriesVC = RepositoriesListViewController()
+    //let RepositoriesVC = RepositoriesListViewController(language: "")
     var navigatorVC: UINavigationController?
     
     override func viewDidLoad() {
@@ -52,7 +52,7 @@ extension ContainerViewController: HomeViewControllerDelegate {
                     DispatchQueue.main.async {
                         completion?()
                     }
-                    
+           
                 }
             }
          
@@ -78,16 +78,19 @@ extension ContainerViewController: MenuViewControllerDelegate {
             case .home:
                 self.resetHome()
             case .java:
-                self.ShowRepositories()
-            case .appRating:
-                break
-            case .shareApp:
-                break
-            case .settings:
+                self.ShowRepositories(with:menuItem.rawValue)
+            case .csharp:
+                self.ShowRepositories(with:menuItem.rawValue)
+            case .swift:
+                self.ShowRepositories(with:menuItem.rawValue)
+            case .python:
+                self.ShowRepositories(with:menuItem.rawValue)
+            case .exit:
                 break
             }
     }
-    func ShowRepositories(){
+    func ShowRepositories(with language: String){
+        let RepositoriesVC = RepositoriesListViewController(language: language)
         let vc = RepositoriesVC
         homeVC.addChild(vc)
         homeVC.view.addSubview(vc.view)
@@ -96,6 +99,7 @@ extension ContainerViewController: MenuViewControllerDelegate {
         homeVC.title = vc.title
     }
     func resetHome(){
+        let RepositoriesVC = RepositoriesListViewController(language: "")
         RepositoriesVC.view.removeFromSuperview()
         RepositoriesVC.didMove(toParent: self)
         homeVC.title = "Home"

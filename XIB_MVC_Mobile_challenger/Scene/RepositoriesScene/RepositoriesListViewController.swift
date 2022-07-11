@@ -1,4 +1,5 @@
 import UIKit
+import MapKit
 
 class RepositoriesListViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
@@ -13,7 +14,16 @@ class RepositoriesListViewController: UIViewController {
         label.textColor = .blue
         return label
     }()
-
+    var language: String
+    init(language: String) {
+        self.language = language
+        super.init(nibName: "RepositoriesListViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = "Carregando Repositórios.Aguarde..."
@@ -21,7 +31,7 @@ class RepositoriesListViewController: UIViewController {
         tableview.dataSource = self
         tableview.register(RepositoriesListTableViewCell.nib, forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
         model.delegate = self
-        model.loadRepositories()
+        model.loadRepositories(language: language)
 }
     func showPullrequest(repository: GitRepository) {
         let repository = repositories[tableview.indexPathForSelectedRow!.row]
@@ -55,7 +65,7 @@ extension RepositoriesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == repositories.count - 2 && !model.rechargeList && repositories.count != model.totalrepository {
             model.currentPage += 1
-            model.loadRepositories()
+            model.loadRepositories(language: language)
             print("Total de Repositórios: \(model.totalrepository) , Já Inclusos : \(repositories.count)")
         }
     }

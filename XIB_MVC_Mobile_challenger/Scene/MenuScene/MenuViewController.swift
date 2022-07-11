@@ -8,21 +8,24 @@ class MenuViewController: UIViewController {
     enum MenuOptions: String, CaseIterable {
         case home = "Home"
         case java = "Java"
-        case appRating = "C++"
-        case shareApp = "Swift"
-        case settings = "Sair"
+        case csharp = "C#"
+        case swift = "Swift"
+        case python = "Python"
+        case exit = "Sair"
         
         var imageName: String {
             switch self {
             case .home:
-                return "house"
+                return "home"
             case .java:
-                return "JavaScript.png"
-            case .appRating:
-                return "c-programming.png"
-            case .shareApp:
-                return "swift-og.png"
-            case .settings:
+                return "pngwing.com"
+            case .csharp:
+                return "csharp"
+            case .swift:
+                return "swift"
+            case .python:
+                return "Python.svg.png"
+            case .exit:
                 return "rectangle.portrait.and.arrow.right"
             }
         }
@@ -48,8 +51,11 @@ extension MenuViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.backgroundColor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
         cell.textLabel?.textColor = .white
-        //cell.imageView?.image = UIImage(systemName: MenuOptions.allCases[indexPath.row].imageName)
-        cell.imageView?.image = UIImage(named: MenuOptions.allCases[indexPath.row].imageName)
+        var image =  UIImage(named: MenuOptions.allCases[indexPath.row].imageName)
+        if image == nil {
+            image = UIImage(systemName: MenuOptions.allCases[indexPath.row].imageName)
+        }
+        cell.imageView?.image = image
         cell.textLabel?.text = MenuOptions.allCases[indexPath.row].rawValue
         return cell
     }
