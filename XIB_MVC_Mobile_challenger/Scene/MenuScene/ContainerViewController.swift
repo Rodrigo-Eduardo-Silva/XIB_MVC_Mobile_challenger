@@ -9,7 +9,6 @@ class ContainerViewController: UIViewController {
     private var menuState: MenuState = .closed
     let menuVC = MenuViewController()
     let homeVC = HomeViewController()
-    //let RepositoriesVC = RepositoriesListViewController(language: "")
     var navigatorVC: UINavigationController?
     
     override func viewDidLoad() {
@@ -36,32 +35,25 @@ class ContainerViewController: UIViewController {
 extension ContainerViewController: HomeViewControllerDelegate {
     func didTapMenuButton() {
         toggleMenu(completion: nil)
-        print("did")
     }
     func toggleMenu(completion:(() -> Void)?) {
         switch menuState {
             
         case .opened:
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
-                
                 self.navigatorVC?.view.frame.origin.x = 0
-                
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .closed
                     DispatchQueue.main.async {
                         completion?()
                     }
-           
                 }
             }
-         
         case .closed:
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
-                
                 self.navigatorVC?.view.frame.origin.x = self.homeVC.view.frame.size.width - 100
-                
-            } completion: { [weak self] done in
+              } completion: { [weak self] done in
                 if done {
                     self?.menuState = .opened
                 }
@@ -72,7 +64,6 @@ extension ContainerViewController: HomeViewControllerDelegate {
 
 extension ContainerViewController: MenuViewControllerDelegate {
     func didSelect(menuItem: MenuViewController.MenuOptions) {
-        
         toggleMenu(completion: nil)
             switch menuItem {
             case .home:
@@ -86,7 +77,7 @@ extension ContainerViewController: MenuViewControllerDelegate {
             case .python:
                 self.ShowRepositories(with:menuItem.rawValue)
             case .exit:
-                break
+                self.SavedPullrequest()
             }
     }
     func ShowRepositories(with language: String){
@@ -103,6 +94,14 @@ extension ContainerViewController: MenuViewControllerDelegate {
         RepositoriesVC.view.removeFromSuperview()
         RepositoriesVC.didMove(toParent: self)
         homeVC.title = "Home"
+    }
+    func SavedPullrequest(){
+        let SavedPullrequestVC = SaveViewController()
+        homeVC.addChild(SavedPullrequestVC)
+        homeVC.view.addSubview(SavedPullrequestVC.view)
+        SavedPullrequestVC.view.frame = view.frame
+        SavedPullrequestVC.didMove(toParent: homeVC)
+        homeVC.title =  "PullRequest Salvos"
     }
     
 }

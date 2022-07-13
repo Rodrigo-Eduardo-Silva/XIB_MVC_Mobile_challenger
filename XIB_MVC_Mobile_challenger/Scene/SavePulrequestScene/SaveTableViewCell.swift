@@ -1,11 +1,8 @@
-import Kingfisher
 import UIKit
-
-class PullrequestListTableViewCell: UITableViewCell {
-    static let identifier = String(describing: PullrequestListTableViewCell.self)
-    let saveModel = SaveModel()
-
-    @IBOutlet weak var SaveButton: UIButton!
+import Kingfisher
+class SaveTableViewCell: UITableViewCell {
+    static let identifier = String(describing: SaveTableViewCell.self)
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var avatarPullimage: UIImageView!
@@ -19,19 +16,13 @@ class PullrequestListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func preparePullrequest(with pullrequest: PullRequest) {
+    
+    func preparePullrequestSaved(with pullrequest: PullrequestSaved) {
         titleLabel.text = pullrequest.title
-        if let bodyPullrequest = pullrequest.user.body {
-            bodyLabel.text = bodyPullrequest
-        } else {
-            bodyLabel.text = " Just a PullRequest Body"
-        }
-        if let url = URL(string: pullrequest.user.avatar_url) {
+        bodyLabel.text = pullrequest.body
+        if let url = URL(string: pullrequest.avatar_url ?? "None") {
             avatarPullimage.kf.setImage(with: url, placeholder: nil, options: nil, completionHandler: nil)
         }
-    }
-
-    @IBAction func Save(_ sender: Any) {
         
     }
 }

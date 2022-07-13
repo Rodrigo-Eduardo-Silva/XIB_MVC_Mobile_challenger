@@ -2,7 +2,8 @@ import UIKit
 import SafariServices
 
 class PullrequestListViewController: UIViewController {
-
+    
+    var saveModel = SaveViewController()
     @IBOutlet weak var tableView: UITableView!
     var pullrequest: [PullRequest] = []
     var pullmodel: PullRequestListModel?
@@ -68,8 +69,18 @@ extension PullrequestListViewController: UITableViewDataSource {
         guard let pullrequestCell = pullmodel?.pullrequest[indexPath.row] else {
             fatalError()
         }
+        cell.SaveButton.tag = indexPath.row
+        cell.SaveButton.addTarget(self, action: #selector(addPullrequest), for: .touchUpInside)
         cell.preparePullrequest(with: pullrequestCell)
         return cell
+    }
+    @objc func addPullrequest(sender: UIButton){
+        let selected = IndexPath(row: sender.tag, section: 0)
+        guard let pullrequest = pullmodel?.pullrequest[selected.row] else {
+        fatalError()
+        }
+        saveModel.savePullrequest(pullrequest: pullrequest )
+        print("Pullrequest Salvo")
     }
 
 }

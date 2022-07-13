@@ -11,6 +11,12 @@
 		331B9D4B287CAEBF00EEB029 /* csharp.png in Resources */ = {isa = PBXBuildFile; fileRef = 331B9D4A287CAEBF00EEB029 /* csharp.png */; };
 		331B9D4D287CAF1700EEB029 /* swift.png in Resources */ = {isa = PBXBuildFile; fileRef = 331B9D4C287CAF1700EEB029 /* swift.png */; };
 		331B9D4F287CB03F00EEB029 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 331B9D4E287CB03F00EEB029 /* home.png */; };
+		331B9D52287CCFD100EEB029 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B9D50287CCFD100EEB029 /* SaveViewController.swift */; };
+		331B9D53287CCFD100EEB029 /* SaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331B9D51287CCFD100EEB029 /* SaveViewController.xib */; };
+		331B9D56287CD07800EEB029 /* PullrequestSaved.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 331B9D54287CD07700EEB029 /* PullrequestSaved.xcdatamodeld */; };
+		331B9D5A287CD86B00EEB029 /* SaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B9D58287CD86B00EEB029 /* SaveTableViewCell.swift */; };
+		331B9D5B287CD86B00EEB029 /* SaveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331B9D59287CD86B00EEB029 /* SaveTableViewCell.xib */; };
+		331B9D5D287CD8FF00EEB029 /* SaveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B9D5C287CD8FF00EEB029 /* SaveModel.swift */; };
 		33231EE628652F360034D6D8 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33231EE528652F360034D6D8 /* RepositoryService.swift */; };
 		33231EE928652FD30034D6D8 /* GitHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33231EE828652FD30034D6D8 /* GitHead.swift */; };
 		33231EEB286530370034D6D8 /* GitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33231EEA286530370034D6D8 /* GitRepository.swift */; };
@@ -19,6 +25,7 @@
 		33231EF1286530B60034D6D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33231EF0286530B60034D6D8 /* User.swift */; };
 		33231EF4286531D60034D6D8 /* RepositoriesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33231EF3286531D60034D6D8 /* RepositoriesListModel.swift */; };
 		33231EF728653A260034D6D8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 33231EF628653A260034D6D8 /* Kingfisher */; };
+		333A52DA287F591B00A795F8 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 333A52D9287F591B00A795F8 /* save.png */; };
 		333B3A332861453A000BF8D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B3A322861453A000BF8D1 /* AppDelegate.swift */; };
 		333B3A352861453A000BF8D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B3A342861453A000BF8D1 /* SceneDelegate.swift */; };
 		333B3A3C2861453B000BF8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333B3A3B2861453B000BF8D1 /* Assets.xcassets */; };
@@ -48,6 +55,12 @@
 		331B9D4A287CAEBF00EEB029 /* csharp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = csharp.png; sourceTree = "<group>"; };
 		331B9D4C287CAF1700EEB029 /* swift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift.png; sourceTree = "<group>"; };
 		331B9D4E287CB03F00EEB029 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		331B9D50287CCFD100EEB029 /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
+		331B9D51287CCFD100EEB029 /* SaveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveViewController.xib; sourceTree = "<group>"; };
+		331B9D55287CD07800EEB029 /* PullrequestSaved.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PullrequestSaved.xcdatamodel; sourceTree = "<group>"; };
+		331B9D58287CD86B00EEB029 /* SaveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTableViewCell.swift; sourceTree = "<group>"; };
+		331B9D59287CD86B00EEB029 /* SaveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveTableViewCell.xib; sourceTree = "<group>"; };
+		331B9D5C287CD8FF00EEB029 /* SaveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveModel.swift; sourceTree = "<group>"; };
 		33231EE528652F360034D6D8 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		33231EE828652FD30034D6D8 /* GitHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHead.swift; sourceTree = "<group>"; };
 		33231EEA286530370034D6D8 /* GitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepository.swift; sourceTree = "<group>"; };
@@ -55,6 +68,7 @@
 		33231EEE2865309D0034D6D8 /* Pullrequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pullrequest.swift; sourceTree = "<group>"; };
 		33231EF0286530B60034D6D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33231EF3286531D60034D6D8 /* RepositoriesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListModel.swift; sourceTree = "<group>"; };
+		333A52D9287F591B00A795F8 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		333B3A2F2861453A000BF8D1 /* XIB_MVC_Mobile_challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XIB_MVC_Mobile_challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		333B3A322861453A000BF8D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		333B3A342861453A000BF8D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +107,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331B9D57287CD08D00EEB029 /* SavePulrequestScene */ = {
+			isa = PBXGroup;
+			children = (
+				331B9D51287CCFD100EEB029 /* SaveViewController.xib */,
+				331B9D50287CCFD100EEB029 /* SaveViewController.swift */,
+				331B9D5C287CD8FF00EEB029 /* SaveModel.swift */,
+				331B9D58287CD86B00EEB029 /* SaveTableViewCell.swift */,
+				331B9D59287CD86B00EEB029 /* SaveTableViewCell.xib */,
+			);
+			path = SavePulrequestScene;
+			sourceTree = "<group>";
+		};
 		33231EE428652E7E0034D6D8 /* RepositoriesScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +179,7 @@
 				333B3A3B2861453B000BF8D1 /* Assets.xcassets */,
 				333B3A3D2861453B000BF8D1 /* LaunchScreen.storyboard */,
 				333B3A402861453B000BF8D1 /* Info.plist */,
+				331B9D54287CD07700EEB029 /* PullrequestSaved.xcdatamodeld */,
 			);
 			path = XIB_MVC_Mobile_challenger;
 			sourceTree = "<group>";
@@ -172,6 +199,7 @@
 		333CD3BB286A91C900271368 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				331B9D57287CD08D00EEB029 /* SavePulrequestScene */,
 				33419E4D28751B99009AACE1 /* MenuScene */,
 				33231EE428652E7E0034D6D8 /* RepositoriesScene */,
 				333CD3BA286A919300271368 /* PullrequestScene */,
@@ -182,6 +210,7 @@
 		333ECDC52877CFE60080AFE8 /* Image Language */ = {
 			isa = PBXGroup;
 			children = (
+				333A52D9287F591B00A795F8 /* save.png */,
 				333ECDCC2877D18E0080AFE8 /* Python.svg.png */,
 				331B9D4A287CAEBF00EEB029 /* csharp.png */,
 				331B9D48287CADFB00EEB029 /* pngwing.com.png */,
@@ -278,12 +307,15 @@
 				333ECDCD2877D18E0080AFE8 /* Python.svg.png in Resources */,
 				334434122873A97100B0F3B6 /* PullrequestListViewController.xib in Resources */,
 				331B9D49287CADFB00EEB029 /* pngwing.com.png in Resources */,
+				331B9D5B287CD86B00EEB029 /* SaveTableViewCell.xib in Resources */,
 				333B3A4B286146EA000BF8D1 /* RepositoriesListViewController.xib in Resources */,
+				333A52DA287F591B00A795F8 /* save.png in Resources */,
 				33419E4C28751B8F009AACE1 /* MenuViewController.xib in Resources */,
 				333ECDBB2877B2A90080AFE8 /* ContainerViewController.xib in Resources */,
 				331B9D4D287CAF1700EEB029 /* swift.png in Resources */,
 				333B3A4F28614CEC000BF8D1 /* RepositoriesListTableViewCell.xib in Resources */,
 				333ECDBF2877B2DF0080AFE8 /* HomeViewController.xib in Resources */,
+				331B9D53287CCFD100EEB029 /* SaveViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +326,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331B9D5D287CD8FF00EEB029 /* SaveModel.swift in Sources */,
+				331B9D56287CD07800EEB029 /* PullrequestSaved.xcdatamodeld in Sources */,
 				33231EE928652FD30034D6D8 /* GitHead.swift in Sources */,
+				331B9D52287CCFD100EEB029 /* SaveViewController.swift in Sources */,
 				33231EED286530770034D6D8 /* Owner.swift in Sources */,
 				333B3A4A286146EA000BF8D1 /* RepositoriesListViewController.swift in Sources */,
 				33231EF4286531D60034D6D8 /* RepositoriesListModel.swift in Sources */,
@@ -308,6 +343,7 @@
 				333CD3BF286A95CF00271368 /* PullrequestListModel.swift in Sources */,
 				33231EEB286530370034D6D8 /* GitRepository.swift in Sources */,
 				333ECDBA2877B2A90080AFE8 /* ContainerViewController.swift in Sources */,
+				331B9D5A287CD86B00EEB029 /* SaveTableViewCell.swift in Sources */,
 				333B3A332861453A000BF8D1 /* AppDelegate.swift in Sources */,
 				333B3A352861453A000BF8D1 /* SceneDelegate.swift in Sources */,
 				33231EF1286530B60034D6D8 /* User.swift in Sources */,
@@ -541,6 +577,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		331B9D54287CD07700EEB029 /* PullrequestSaved.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				331B9D55287CD07800EEB029 /* PullrequestSaved.xcdatamodel */,
+			);
+			currentVersion = 331B9D55287CD07800EEB029 /* PullrequestSaved.xcdatamodel */;
+			path = PullrequestSaved.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 333B3A272861453A000BF8D1 /* Project object */;
 }
