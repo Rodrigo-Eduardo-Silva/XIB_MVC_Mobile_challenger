@@ -12,7 +12,7 @@ class RepositoriesListService {
         config.timeoutIntervalForRequest = 5
         session = URLSession(configuration: config)
     }
-    func loadRepositories(page: Int ,language: String, completion: @escaping (GitHead?) -> Void) {
+    func loadRepositories(page: Int, language: String, completion: @escaping (GitHead?) -> Void) {
         let query = basePath + "q=language:\(language)&sort=stars&page=\(page)&per_page=\(per_page)"
         guard let url = URL(string: query) else {return}
         let dataTask = session.dataTask(with: url) { data, response, error in

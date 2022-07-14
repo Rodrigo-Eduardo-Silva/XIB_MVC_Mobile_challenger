@@ -3,12 +3,12 @@ import CoreData
 import SafariServices
 
 class SaveViewController: UIViewController {
-    
+
     var pullrequest: PullrequestSaved!
     var fetchResultController: NSFetchedResultsController<PullrequestSaved>!
     @IBOutlet weak var tableView: UITableView!
     init() {
-       
+
         super.init(nibName: "SaveViewController", bundle: nil)
     }
 
@@ -109,7 +109,7 @@ extension SaveViewController: NSFetchedResultsControllerDelegate {
             print("erro")
         }
     }
-    
+
 }
 extension SaveViewController {
     var context: NSManagedObjectContext {
@@ -118,5 +118,5 @@ extension SaveViewController {
         }
         return appDelegate.persistentContainer.viewContext
     }
-   
+
 }

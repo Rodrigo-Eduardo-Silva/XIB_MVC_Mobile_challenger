@@ -3,5 +3,4 @@ import UIKit
 
 class MenuModel {
 
- 
 }

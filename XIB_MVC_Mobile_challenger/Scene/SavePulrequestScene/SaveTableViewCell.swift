@@ -2,7 +2,7 @@ import UIKit
 import Kingfisher
 class SaveTableViewCell: UITableViewCell {
     static let identifier = String(describing: SaveTableViewCell.self)
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var avatarPullimage: UIImageView!
@@ -16,13 +16,13 @@ class SaveTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func preparePullrequestSaved(with pullrequest: PullrequestSaved) {
         titleLabel.text = pullrequest.title
-        bodyLabel.text = pullrequest.body
+        bodyLabel.text = pullrequest.body == "" ? bodyLabel.text : "Just Pullrequest body"
         if let url = URL(string: pullrequest.avatar_url ?? "None") {
             avatarPullimage.kf.setImage(with: url, placeholder: nil, options: nil, completionHandler: nil)
         }
-        
+
     }
 }

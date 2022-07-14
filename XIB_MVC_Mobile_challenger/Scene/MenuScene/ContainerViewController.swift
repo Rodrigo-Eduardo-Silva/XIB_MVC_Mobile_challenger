@@ -10,14 +10,14 @@ class ContainerViewController: UIViewController {
     let menuVC = MenuViewController()
     let homeVC = HomeViewController()
     var navigatorVC: UINavigationController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .blue
         addChildVC()
     }
-    func addChildVC(){
+    func addChildVC() {
         menuVC.delegate = self
         addChild(menuVC)
         view.addSubview(menuVC.view)
@@ -28,7 +28,7 @@ class ContainerViewController: UIViewController {
         view.addSubview(navigatorVC.view)
         navigatorVC.didMove(toParent: self)
         self.navigatorVC = navigatorVC
- 
+
     }
 }
 
@@ -38,7 +38,7 @@ extension ContainerViewController: HomeViewControllerDelegate {
     }
     func toggleMenu(completion:(() -> Void)?) {
         switch menuState {
-            
+
         case .opened:
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
                 self.navigatorVC?.view.frame.origin.x = 0
@@ -69,39 +69,41 @@ extension ContainerViewController: MenuViewControllerDelegate {
             case .home:
                 self.resetHome()
             case .java:
-                self.ShowRepositories(with:menuItem.rawValue)
+                self.ShowRepositories(with: menuItem.rawValue)
             case .csharp:
-                self.ShowRepositories(with:menuItem.rawValue)
+                self.ShowRepositories(with: menuItem.rawValue)
             case .swift:
-                self.ShowRepositories(with:menuItem.rawValue)
+                self.ShowRepositories(with: menuItem.rawValue)
             case .python:
-                self.ShowRepositories(with:menuItem.rawValue)
-            case .exit:
+                self.ShowRepositories(with: menuItem.rawValue)
+            case .saved:
                 self.SavedPullrequest()
+            case .exit:
+                exit(0)
             }
     }
-    func ShowRepositories(with language: String){
-        let RepositoriesVC = RepositoriesListViewController(language: language)
-        let vc = RepositoriesVC
+    func ShowRepositories(with language: String) {
+        let repositoriesVC = RepositoriesListViewController(language: language)
+        let vc = repositoriesVC
         homeVC.addChild(vc)
         homeVC.view.addSubview(vc.view)
         vc.view.frame = view.frame
         vc.didMove(toParent: homeVC)
         homeVC.title = vc.title
     }
-    func resetHome(){
-        let RepositoriesVC = RepositoriesListViewController(language: "")
-        RepositoriesVC.view.removeFromSuperview()
-        RepositoriesVC.didMove(toParent: self)
+    func resetHome() {
+        let repositoriesVC = RepositoriesListViewController(language: "")
+        repositoriesVC.view.removeFromSuperview()
+        repositoriesVC.didMove(toParent: self)
         homeVC.title = "Home"
     }
-    func SavedPullrequest(){
-        let SavedPullrequestVC = SaveViewController()
-        homeVC.addChild(SavedPullrequestVC)
-        homeVC.view.addSubview(SavedPullrequestVC.view)
-        SavedPullrequestVC.view.frame = view.frame
-        SavedPullrequestVC.didMove(toParent: homeVC)
+    func SavedPullrequest() {
+        let savedPullrequestVC = SaveViewController()
+        homeVC.addChild(savedPullrequestVC)
+        homeVC.view.addSubview(savedPullrequestVC.view)
+        savedPullrequestVC.view.frame = view.frame
+        savedPullrequestVC.didMove(toParent: homeVC)
         homeVC.title =  "PullRequest Salvos"
     }
-    
+
 }

@@ -1,5 +1,5 @@
 import UIKit
-protocol MenuViewControllerDelegate : AnyObject {
+protocol MenuViewControllerDelegate: AnyObject {
     func didSelect(menuItem: MenuViewController.MenuOptions)
 }
 
@@ -11,8 +11,9 @@ class MenuViewController: UIViewController {
         case csharp = "C#"
         case swift = "Swift"
         case python = "Python"
+        case saved = "Pullrequest Salvos"
         case exit = "Sair"
-        
+
         var imageName: String {
             switch self {
             case .home:
@@ -25,6 +26,8 @@ class MenuViewController: UIViewController {
                 return "swift"
             case .python:
                 return "Python.svg.png"
+            case .saved:
+                return "save"
             case .exit:
                 return "rectangle.portrait.and.arrow.right"
             }
@@ -46,7 +49,7 @@ extension MenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MenuOptions.allCases.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.backgroundColor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)

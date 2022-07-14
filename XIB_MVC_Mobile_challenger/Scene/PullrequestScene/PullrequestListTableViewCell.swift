@@ -32,6 +32,6 @@ class PullrequestListTableViewCell: UITableViewCell {
     }
 
     @IBAction func Save(_ sender: Any) {
-        
+
     }
 }
