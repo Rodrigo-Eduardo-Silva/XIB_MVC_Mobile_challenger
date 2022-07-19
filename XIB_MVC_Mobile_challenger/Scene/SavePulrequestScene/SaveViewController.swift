@@ -4,7 +4,7 @@ import SafariServices
 
 class SaveViewController: UIViewController {
 
-    var pullrequest: PullrequestSaved!
+    
     var fetchResultController: NSFetchedResultsController<PullrequestSaved>!
     @IBOutlet weak var tableView: UITableView!
     init() {
@@ -39,18 +39,7 @@ class SaveViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    func savePullrequest(pullrequest: PullRequest) {
-        self.pullrequest = PullrequestSaved(context: context)
-        self.pullrequest.title = pullrequest.title
-        self.pullrequest.body = pullrequest.user.body
-        self.pullrequest.avatar_url = pullrequest.user.avatar_url
-        self.pullrequest.html_url = pullrequest.user.html_url
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+
 }
 extension SaveViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

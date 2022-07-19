@@ -3,7 +3,7 @@ import SafariServices
 
 class PullrequestListViewController: UIViewController {
 
-    var saveModel = SaveViewController()
+    var saveModel = SaveModel()
     @IBOutlet weak var tableView: UITableView!
     var pullrequest: [PullRequest] = []
     var pullmodel: PullRequestListModel?
