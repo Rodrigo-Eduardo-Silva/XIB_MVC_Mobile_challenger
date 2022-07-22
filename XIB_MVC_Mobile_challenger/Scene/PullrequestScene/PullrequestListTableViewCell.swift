@@ -27,7 +27,8 @@ class PullrequestListTableViewCell: UITableViewCell {
             bodyLabel.text = " Just a PullRequest Body"
         }
         if let url = URL(string: pullrequest.user.avatar_url) {
-            avatarPullimage.kf.setImage(with: url, placeholder: nil, options: nil, completionHandler: nil)
+            avatarPullimage.kf.setImage(with: url, placeholder: UIImage(named: "person.wave.2.fill"), options: nil, completionHandler: nil)
+            avatarPullimage.layer.cornerRadius = avatarPullimage.frame.size.height/2
         }
     }
 

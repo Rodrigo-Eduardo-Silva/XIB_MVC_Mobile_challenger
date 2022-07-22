@@ -39,7 +39,8 @@ class RepositoriesListTableViewCell: UITableViewCell {
         starsLabel.text = String(repository.stargazers_count)
         userNameLabel.text = repository.full_name
         if let url = URL(string: repository.owner.avatar_url) {
-            avatarImage.kf.setImage(with: url, placeholder: nil, options: nil, completionHandler: nil)
+            avatarImage.kf.setImage(with: url, placeholder: UIImage(named: "person.wave.2.fill"), options: nil, completionHandler: nil)
+            avatarImage.layer.cornerRadius = avatarImage.frame.size.height/2
         }
     }
 }

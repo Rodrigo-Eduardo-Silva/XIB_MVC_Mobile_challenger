@@ -1,10 +1,12 @@
 import UIKit
 import MapKit
+import Foundation
 
 class RepositoriesListViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     var model = RepositoriesListModel()
-    var repositories: [GitRepository] {
+    weak var delegate: RepositoriesListService?
+     var repositories: [GitRepository] {
         model.repositories
     }
     var totalrepositories: GitHead!
@@ -79,3 +81,16 @@ extension RepositoriesListViewController: RepositoriesListModelDelegate {
          }
     }
 }
+
+extension RepositoriesListViewController: RepositoriesListServiceDelegate {
+    func showMessage(message: String) {
+        let alert = UIAlertController(title: message, message: "Verifique a conexão com a internet , o aplicativo será encerrado", preferredStyle: .alert)
+        let button = UIAlertAction(title: "OK", style: .default) { action in
+            exit(0)
+        }
+        alert.addAction(button)
+        self.present(alert, animated: true, completion: nil)
+        print("rodrigo")
+    }
+}
+

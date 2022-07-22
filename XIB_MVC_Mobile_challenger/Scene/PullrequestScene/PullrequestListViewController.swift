@@ -7,6 +7,12 @@ class PullrequestListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var pullrequest: [PullRequest] = []
     var pullmodel: PullRequestListModel?
+    var label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .blue
+        return label
+    }()
     init(model: PullRequestListModel) {
         self.pullmodel = model
         super.init(nibName: "PullrequestListViewController", bundle: nil)
@@ -18,6 +24,7 @@ class PullrequestListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = " Não á Pullrequests para esse Repositório"
         registerPullCells()
         pullmodel?.delegate = self
         tableView.delegate = self
@@ -59,6 +66,7 @@ extension PullrequestListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.backgroundView = pullmodel?.pullrequest.count == 0 ? label : nil
         return pullmodel?.pullrequest.count ?? 0
     }
 
@@ -79,9 +87,11 @@ extension PullrequestListViewController: UITableViewDataSource {
         guard let pullrequest = pullmodel?.pullrequest[selected.row] else {
         fatalError()
         }
+        sender.tag = selected.row
+        sender.isEnabled = false
         saveModel.savePullrequest(pullrequest: pullrequest)
         saveAltert(with: pullrequest)
-        print("Pullrequest Salvo")
+        print("Pullrequest Salvo",selected.row)
     }
     func saveAltert(with pullrequest: PullRequest) {
         let title = "Pullrequest Salvo"

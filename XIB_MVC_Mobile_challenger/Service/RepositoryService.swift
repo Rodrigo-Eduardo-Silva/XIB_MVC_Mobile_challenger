@@ -1,6 +1,11 @@
 import Foundation
+import UIKit
+protocol RepositoriesListServiceDelegate: AnyObject {
+    func showMessage(message: String)
+}
 
 class RepositoriesListService {
+    weak var delegate: RepositoriesListServiceDelegate?
     private let basePath = "https://api.github.com/search/repositories?"
     private let privateToken = "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"
     private let teste = "https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1"
@@ -33,8 +38,10 @@ class RepositoriesListService {
                 }
             } else {
                 print(error as Any)
+                self.delegate?.showMessage(message: error?.localizedDescription ?? "Sem internet")
             }
         }
         dataTask.resume()
     }
+    
 }
