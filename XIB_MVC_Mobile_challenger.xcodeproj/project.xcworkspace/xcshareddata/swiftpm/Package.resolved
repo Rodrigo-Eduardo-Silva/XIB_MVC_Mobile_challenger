@@ -9,6 +9,15 @@
           "revision": "022e4eeb79f817748544b318b991d9a70036bbf8",
           "version": "7.2.4"
         }
+      },
+      {
+        "package": "SideMenu",
+        "repositoryURL": "https://github.com/jonkykong/SideMenu.git",
+        "state": {
+          "branch": "master",
+          "revision": "8bd4fd128923cf5494fa726839af8afe12908ad9",
+          "version": null
+        }
       }
     ]
   },

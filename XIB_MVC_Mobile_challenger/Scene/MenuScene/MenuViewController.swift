@@ -1,71 +1,53 @@
 import UIKit
+import SideMenu
 protocol MenuViewControllerDelegate: AnyObject {
-    func didSelect(menuItem: MenuViewController.MenuOptions)
+    func didSelectMenuOption(named: menuOptions)
 }
 
 class MenuViewController: UIViewController {
-    weak var delegate: MenuViewControllerDelegate?
-    enum MenuOptions: String, CaseIterable {
-        case home = "Home"
-        case java = "Java"
-        case csharp = "C#"
-        case swift = "Swift"
-        case python = "Python"
-        case saved = "Pullrequest Salvos"
-        case exit = "Sair"
-
-        var imageName: String {
-            switch self {
-            case .home:
-                return "home"
-            case .java:
-                return "pngwing.com"
-            case .csharp:
-                return "csharp"
-            case .swift:
-                return "swift"
-            case .python:
-                return "Python.svg.png"
-            case .saved:
-                return "save"
-            case .exit:
-                return "rectangle.portrait.and.arrow.right"
-            }
-        }
-    }
-
+    
     @IBOutlet weak var tableView: UITableView!
+    private let menuOptions: [menuOptions]
+    private let color = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
+    weak var delegate: MenuViewControllerDelegate?
+    
+    init(with menuOptions: [menuOptions]){
+        self.menuOptions = menuOptions
+        
+        super.init(nibName: nil, bundle: nil)
+ 
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        view.backgroundColor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
-        title = "Select the language for seach"
+        view.backgroundColor = color
     }
 }
 
 extension MenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MenuOptions.allCases.count
+        return menuOptions.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
+        cell.backgroundColor = color
         cell.textLabel?.textColor = .white
-        var image =  UIImage(named: MenuOptions.allCases[indexPath.row].imageName)
-        if image == nil {
-            image = UIImage(systemName: MenuOptions.allCases[indexPath.row].imageName)
-        }
-        cell.imageView?.image = image
-        cell.textLabel?.text = MenuOptions.allCases[indexPath.row].rawValue
+        cell.imageView?.image = UIImage(systemName:menuOptions[indexPath.row].imageName)
+        print(menuOptions[indexPath.row].imageName)
+        cell.textLabel?.text = menuOptions[indexPath.row].rawValue
         return cell
     }
 }
 extension MenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = MenuOptions.allCases[indexPath.row]
-        delegate?.didSelect(menuItem: item)
+        let selectedOption = menuOptions[indexPath.row]
+        delegate?.didSelectMenuOption(named: selectedOption)
     }
 }

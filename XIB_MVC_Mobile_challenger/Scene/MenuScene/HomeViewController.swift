@@ -1,19 +1,63 @@
 import UIKit
-protocol HomeViewControllerDelegate: AnyObject {
-    func didTapMenuButton()
-}
+import SideMenu
+import SwiftUI
 
 class HomeViewController: UIViewController {
-    weak var  delegate: HomeViewControllerDelegate?
-
+    
+    private var sideMenu: SideMenuNavigationController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        title = "Home Github Repositories"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
+        let menu = MenuViewController(with: menuOptions.allCases)
+        menu.delegate = self
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        sideMenu?.menuWidth = 300
+   
     }
-    @objc func didTapMenuButton() {
-        delegate?.didTapMenuButton()
+    
+    @IBAction func ditTapMenuButton(_ sender: Any) {
+        guard let viewController = sideMenu else {
+            fatalError()
+        }
+        navigationController?.present(viewController, animated: true, completion: nil)
+        print("did tap")
     }
+    
+    func showRepositories(with language: String) {
+        let viewController = RepositoriesListViewController(language: language)
+        addChild(viewController)
+        view.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
+    }
+    func showSaveRepository() {
+        let viewController = SaveViewController()
+        addChild(viewController)
+        view.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
+    }
+}
 
+extension HomeViewController : MenuViewControllerDelegate {
+    func didSelectMenuOption(named: menuOptions) {
+        sideMenu?.dismiss(animated: true, completion: { [weak self] in
+            switch named {
+            case .home:
+                return
+            case .java:
+                self?.showRepositories(with: named.rawValue)
+            case .csharp:
+                self?.showRepositories(with: named.rawValue)
+            case .swift:
+                self?.showRepositories(with: named.rawValue)
+            case .python:
+                self?.showRepositories(with: named.rawValue)
+            case .saved:
+                self?.showSaveRepository()
+            case .exit:
+                return
+            }
+        })
+    }
 }

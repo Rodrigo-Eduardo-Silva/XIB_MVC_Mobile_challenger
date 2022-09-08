@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  XIB_MVC_Mobile_challenger
-//
-//  Created by Rodrigo Eduardo Silva on 20/06/22.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -15,7 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let mainViewController = ContainerViewController()
+        let mainViewController = HomeViewController()
         let navigatorViewController = UINavigationController(rootViewController: mainViewController)
         window?.frame = UIScreen.main.bounds
         window?.rootViewController = navigatorViewController

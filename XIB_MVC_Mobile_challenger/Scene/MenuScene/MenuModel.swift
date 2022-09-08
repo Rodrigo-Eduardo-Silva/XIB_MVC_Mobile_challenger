@@ -1,6 +1,14 @@
 import Foundation
 import UIKit
 
-class MenuModel {
+protocol MenuViewModelDelegate: AnyObject {
+    func didSelectMenuItem(named: menuOptions)
+}
 
+
+class MenuViewModel {
+    
+    weak var delegate: MenuViewModelDelegate?
+    
+    
 }

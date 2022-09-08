@@ -1,10 +1,14 @@
 import Kingfisher
 import UIKit
+protocol PullrequestListTableViewCellDelegate: AnyObject {
+    func save(index: Int)
+}
 
 class PullrequestListTableViewCell: UITableViewCell {
     static let identifier = String(describing: PullrequestListTableViewCell.self)
     let saveModel = SaveModel()
-
+    weak var delegate: PullrequestListTableViewCellDelegate?
+    private var index: Int = -1
     @IBOutlet weak var SaveButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
@@ -19,13 +23,16 @@ class PullrequestListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func preparePullrequest(with pullrequest: PullRequest) {
+    
+    func preparePullrequest(with pullrequest: PullRequest, at index: Int) {
+        self.index = index
         titleLabel.text = pullrequest.title
         if let bodyPullrequest = pullrequest.user.body {
             bodyLabel.text = bodyPullrequest
         } else {
             bodyLabel.text = " Just a PullRequest Body"
         }
+        
         if let url = URL(string: pullrequest.user.avatar_url) {
             avatarPullimage.kf.setImage(with: url, placeholder: UIImage(named: "person.wave.2.fill"), options: nil, completionHandler: nil)
             avatarPullimage.layer.cornerRadius = avatarPullimage.frame.size.height/2
@@ -33,6 +40,7 @@ class PullrequestListTableViewCell: UITableViewCell {
     }
 
     @IBAction func Save(_ sender: Any) {
-
+        delegate?.save(index: index)
+        SaveButton.isEnabled = false
     }
 }

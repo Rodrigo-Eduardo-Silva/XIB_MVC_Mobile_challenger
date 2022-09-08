@@ -5,8 +5,7 @@ import Foundation
 class RepositoriesListViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     var model = RepositoriesListModel()
-    weak var delegate: RepositoriesListService?
-     var repositories: [GitRepository] {
+    var repositories: [GitRepository] {
         model.repositories
     }
     var totalrepositories: GitHead!
@@ -90,7 +89,7 @@ extension RepositoriesListViewController: RepositoriesListServiceDelegate {
         }
         alert.addAction(button)
         self.present(alert, animated: true, completion: nil)
-        print("rodrigo")
+        print("teste")
     }
 }
 

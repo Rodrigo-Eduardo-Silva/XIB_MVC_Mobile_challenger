@@ -77,21 +77,9 @@ extension PullrequestListViewController: UITableViewDataSource {
         guard let pullrequestCell = pullmodel?.pullrequest[indexPath.row] else {
             fatalError()
         }
-        cell.SaveButton.tag = indexPath.row
-        cell.SaveButton.addTarget(self, action: #selector(addPullrequest), for: .touchUpInside)
-        cell.preparePullrequest(with: pullrequestCell)
+        cell.preparePullrequest(with: pullrequestCell, at: indexPath.row)
+        cell.delegate = self
         return cell
-    }
-    @objc func addPullrequest(sender: UIButton) {
-        let selected = IndexPath(row: sender.tag, section: 0)
-        guard let pullrequest = pullmodel?.pullrequest[selected.row] else {
-        fatalError()
-        }
-        sender.tag = selected.row
-        sender.isEnabled = false
-        saveModel.savePullrequest(pullrequest: pullrequest)
-        saveAltert(with: pullrequest)
-        print("Pullrequest Salvo",selected.row)
     }
     func saveAltert(with pullrequest: PullRequest) {
         let title = "Pullrequest Salvo"
@@ -115,4 +103,15 @@ extension PullrequestListViewController: UITableViewDelegate {
         present(webviewController, animated: true, completion: nil)
     }
 
+}
+
+extension PullrequestListViewController: PullrequestListTableViewCellDelegate {
+    func save(index: Int) {
+        guard let pullrequest = pullmodel?.pullrequest[index] else {
+        fatalError()
+        }
+        saveModel.savePullrequest(pullrequest: pullrequest)
+        saveAltert(with: pullrequest)
+        print("Pullrequest Salvo",index)
+    }
 }
