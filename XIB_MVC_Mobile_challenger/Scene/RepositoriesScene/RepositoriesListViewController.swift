@@ -3,18 +3,22 @@ import MapKit
 import Foundation
 
 class RepositoriesListViewController: UIViewController {
+    
     @IBOutlet weak var tableview: UITableView!
     var model = RepositoriesListModel()
+    var totalrepositories: GitHead!
+    
     var repositories: [GitRepository] {
         model.repositories
     }
-    var totalrepositories: GitHead!
-    var label: UILabel = {
+    
+     var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .blue
         return label
     }()
+    
     var language: String
     init(language: String) {
         self.language = language
@@ -33,11 +37,11 @@ class RepositoriesListViewController: UIViewController {
         tableview.register(RepositoriesListTableViewCell.nib, forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
         model.delegate = self
         model.loadRepositories(language: language)
-}
+    }
+    
     func showPullrequest(repository: GitRepository) {
         let repository = repositories[tableview.indexPathForSelectedRow!.row]
         let viewController = PullrequestListViewController.create(repository: repository)
-        viewController.modalPresentationStyle  = .fullScreen
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -63,6 +67,7 @@ extension RepositoriesListViewController: UITableViewDelegate {
         let repository = repositories[indexPath.row]
         showPullrequest(repository: repository)
     }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == repositories.count - 2 && !model.rechargeList && repositories.count != model.totalrepository {
             model.currentPage += 1
@@ -92,4 +97,3 @@ extension RepositoriesListViewController: RepositoriesListServiceDelegate {
         print("teste")
     }
 }
-

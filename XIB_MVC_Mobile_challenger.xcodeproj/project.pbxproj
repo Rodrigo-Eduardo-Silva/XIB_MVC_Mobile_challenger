@@ -38,18 +38,20 @@
 		333CD3BF286A95CF00271368 /* PullrequestListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CD3BE286A95CF00271368 /* PullrequestListModel.swift */; };
 		333CD3C2286A98F400271368 /* PullrequestListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CD3C0286A98F400271368 /* PullrequestListTableViewCell.swift */; };
 		333CD3C3286A98F400271368 /* PullrequestListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333CD3C1286A98F400271368 /* PullrequestListTableViewCell.xib */; };
-		333ECDBA2877B2A90080AFE8 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333ECDB82877B2A80080AFE8 /* ContainerViewController.swift */; };
-		333ECDBB2877B2A90080AFE8 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333ECDB92877B2A80080AFE8 /* ContainerViewController.xib */; };
-		333ECDBE2877B2DF0080AFE8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333ECDBC2877B2DF0080AFE8 /* HomeViewController.swift */; };
-		333ECDBF2877B2DF0080AFE8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333ECDBD2877B2DF0080AFE8 /* HomeViewController.xib */; };
-		333ECDC12877B3280080AFE8 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333ECDC02877B3280080AFE8 /* MenuModel.swift */; };
 		333ECDCD2877D18E0080AFE8 /* Python.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 333ECDCC2877D18E0080AFE8 /* Python.svg.png */; };
 		333FF57C28C6C111006CCBF3 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 333FF57B28C6C111006CCBF3 /* SideMenu */; };
+		3340669D28D00A53001D05DF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340669C28D00A53001D05DF /* Coordinator.swift */; };
+		334066A028D00BA6001D05DF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340669F28D00BA6001D05DF /* AppCoordinator.swift */; };
+		334066A228D01356001D05DF /* ContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334066A128D01356001D05DF /* ContainerCoordinator.swift */; };
 		33419E4B28751B8F009AACE1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33419E4928751B8F009AACE1 /* MenuViewController.swift */; };
 		33419E4C28751B8F009AACE1 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33419E4A28751B8F009AACE1 /* MenuViewController.xib */; };
 		334434112873A97100B0F3B6 /* PullrequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344340F2873A97100B0F3B6 /* PullrequestListViewController.swift */; };
 		334434122873A97100B0F3B6 /* PullrequestListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334434102873A97100B0F3B6 /* PullrequestListViewController.xib */; };
-		33C3188228C801E8003C120F /* MenuOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3188128C801E8003C120F /* MenuOptions.swift */; };
+		33B2322C28CAB9A600AD0A0C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B2322A28CAB9A600AD0A0C /* HomeViewController.swift */; };
+		33B2322D28CAB9A600AD0A0C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B2322B28CAB9A600AD0A0C /* HomeViewController.xib */; };
+		33C3188228C801E8003C120F /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3188128C801E8003C120F /* MenuModel.swift */; };
+		33C7681428D141E4008FDDC9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C7681228D141E4008FDDC9 /* ContainerViewController.swift */; };
+		33C7681528D141E4008FDDC9 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C7681328D141E4008FDDC9 /* ContainerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,17 +87,19 @@
 		333CD3BE286A95CF00271368 /* PullrequestListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListModel.swift; sourceTree = "<group>"; };
 		333CD3C0286A98F400271368 /* PullrequestListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListTableViewCell.swift; sourceTree = "<group>"; };
 		333CD3C1286A98F400271368 /* PullrequestListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullrequestListTableViewCell.xib; sourceTree = "<group>"; };
-		333ECDB82877B2A80080AFE8 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		333ECDB92877B2A80080AFE8 /* ContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
-		333ECDBC2877B2DF0080AFE8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		333ECDBD2877B2DF0080AFE8 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		333ECDC02877B3280080AFE8 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		333ECDCC2877D18E0080AFE8 /* Python.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Python.svg.png; sourceTree = "<group>"; };
+		3340669C28D00A53001D05DF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3340669F28D00BA6001D05DF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		334066A128D01356001D05DF /* ContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCoordinator.swift; sourceTree = "<group>"; };
 		33419E4928751B8F009AACE1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		33419E4A28751B8F009AACE1 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		3344340F2873A97100B0F3B6 /* PullrequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListViewController.swift; sourceTree = "<group>"; };
 		334434102873A97100B0F3B6 /* PullrequestListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullrequestListViewController.xib; sourceTree = "<group>"; };
-		33C3188128C801E8003C120F /* MenuOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptions.swift; sourceTree = "<group>"; };
+		33B2322A28CAB9A600AD0A0C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		33B2322B28CAB9A600AD0A0C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		33C3188128C801E8003C120F /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		33C7681228D141E4008FDDC9 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		33C7681328D141E4008FDDC9 /* ContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +142,6 @@
 		33231EE728652F4D0034D6D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				33C3188128C801E8003C120F /* MenuOptions.swift */,
 				33231EF0286530B60034D6D8 /* User.swift */,
 				33231EEE2865309D0034D6D8 /* Pullrequest.swift */,
 				33231EEC286530770034D6D8 /* Owner.swift */,
@@ -176,6 +179,7 @@
 		333B3A312861453A000BF8D1 /* XIB_MVC_Mobile_challenger */ = {
 			isa = PBXGroup;
 			children = (
+				3340669E28D00A6B001D05DF /* Coordinator */,
 				333CD3BB286A91C900271368 /* Scene */,
 				33231EF2286531250034D6D8 /* Service */,
 				33231EE728652F4D0034D6D8 /* Models */,
@@ -225,17 +229,27 @@
 			path = "Image Language";
 			sourceTree = "<group>";
 		};
+		3340669E28D00A6B001D05DF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3340669C28D00A53001D05DF /* Coordinator.swift */,
+				3340669F28D00BA6001D05DF /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		33419E4D28751B99009AACE1 /* MenuScene */ = {
 			isa = PBXGroup;
 			children = (
 				333ECDC52877CFE60080AFE8 /* Image Language */,
 				33419E4928751B8F009AACE1 /* MenuViewController.swift */,
 				33419E4A28751B8F009AACE1 /* MenuViewController.xib */,
-				333ECDB82877B2A80080AFE8 /* ContainerViewController.swift */,
-				333ECDB92877B2A80080AFE8 /* ContainerViewController.xib */,
-				333ECDBC2877B2DF0080AFE8 /* HomeViewController.swift */,
-				333ECDBD2877B2DF0080AFE8 /* HomeViewController.xib */,
-				333ECDC02877B3280080AFE8 /* MenuModel.swift */,
+				334066A128D01356001D05DF /* ContainerCoordinator.swift */,
+				33C3188128C801E8003C120F /* MenuModel.swift */,
+				33C7681228D141E4008FDDC9 /* ContainerViewController.swift */,
+				33C7681328D141E4008FDDC9 /* ContainerViewController.xib */,
+				33B2322A28CAB9A600AD0A0C /* HomeViewController.swift */,
+				33B2322B28CAB9A600AD0A0C /* HomeViewController.xib */,
 			);
 			path = MenuScene;
 			sourceTree = "<group>";
@@ -311,6 +325,7 @@
 				331B9D4F287CB03F00EEB029 /* home.png in Resources */,
 				331B9D4B287CAEBF00EEB029 /* csharp.png in Resources */,
 				333B3A3C2861453B000BF8D1 /* Assets.xcassets in Resources */,
+				33C7681528D141E4008FDDC9 /* ContainerViewController.xib in Resources */,
 				333ECDCD2877D18E0080AFE8 /* Python.svg.png in Resources */,
 				334434122873A97100B0F3B6 /* PullrequestListViewController.xib in Resources */,
 				331B9D49287CADFB00EEB029 /* pngwing.com.png in Resources */,
@@ -318,10 +333,9 @@
 				333B3A4B286146EA000BF8D1 /* RepositoriesListViewController.xib in Resources */,
 				333A52DA287F591B00A795F8 /* save.png in Resources */,
 				33419E4C28751B8F009AACE1 /* MenuViewController.xib in Resources */,
-				333ECDBB2877B2A90080AFE8 /* ContainerViewController.xib in Resources */,
 				331B9D4D287CAF1700EEB029 /* swift.png in Resources */,
+				33B2322D28CAB9A600AD0A0C /* HomeViewController.xib in Resources */,
 				333B3A4F28614CEC000BF8D1 /* RepositoriesListTableViewCell.xib in Resources */,
-				333ECDBF2877B2DF0080AFE8 /* HomeViewController.xib in Resources */,
 				331B9D53287CCFD100EEB029 /* SaveViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,22 +349,24 @@
 			files = (
 				331B9D5D287CD8FF00EEB029 /* SaveModel.swift in Sources */,
 				331B9D56287CD07800EEB029 /* PullrequestSaved.xcdatamodeld in Sources */,
+				33C7681428D141E4008FDDC9 /* ContainerViewController.swift in Sources */,
+				334066A028D00BA6001D05DF /* AppCoordinator.swift in Sources */,
 				33231EE928652FD30034D6D8 /* GitHead.swift in Sources */,
 				331B9D52287CCFD100EEB029 /* SaveViewController.swift in Sources */,
 				33231EED286530770034D6D8 /* Owner.swift in Sources */,
-				33C3188228C801E8003C120F /* MenuOptions.swift in Sources */,
+				33C3188228C801E8003C120F /* MenuModel.swift in Sources */,
+				33B2322C28CAB9A600AD0A0C /* HomeViewController.swift in Sources */,
+				334066A228D01356001D05DF /* ContainerCoordinator.swift in Sources */,
 				333B3A4A286146EA000BF8D1 /* RepositoriesListViewController.swift in Sources */,
+				3340669D28D00A53001D05DF /* Coordinator.swift in Sources */,
 				33231EF4286531D60034D6D8 /* RepositoriesListModel.swift in Sources */,
 				33231EE628652F360034D6D8 /* RepositoryService.swift in Sources */,
-				333ECDBE2877B2DF0080AFE8 /* HomeViewController.swift in Sources */,
 				333CD3C2286A98F400271368 /* PullrequestListTableViewCell.swift in Sources */,
 				333B3A4E28614CEC000BF8D1 /* RepositoriesListTableViewCell.swift in Sources */,
 				33419E4B28751B8F009AACE1 /* MenuViewController.swift in Sources */,
-				333ECDC12877B3280080AFE8 /* MenuModel.swift in Sources */,
 				334434112873A97100B0F3B6 /* PullrequestListViewController.swift in Sources */,
 				333CD3BF286A95CF00271368 /* PullrequestListModel.swift in Sources */,
 				33231EEB286530370034D6D8 /* GitRepository.swift in Sources */,
-				333ECDBA2877B2A90080AFE8 /* ContainerViewController.swift in Sources */,
 				331B9D5A287CD86B00EEB029 /* SaveTableViewCell.swift in Sources */,
 				333B3A332861453A000BF8D1 /* AppDelegate.swift in Sources */,
 				333B3A352861453A000BF8D1 /* SceneDelegate.swift in Sources */,

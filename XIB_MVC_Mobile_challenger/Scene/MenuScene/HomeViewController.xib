@@ -18,26 +18,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ir3-9S-dvg">
-                    <rect key="frame" x="0.0" y="95" width="414" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <items>
-                        <navigationItem title="Title" id="P7x-FQ-EGx">
-                            <barButtonItem key="leftBarButtonItem" title="Item" id="TuT-uv-nzx">
-                                <connections>
-                                    <action selector="ditTapMenuButton:" destination="-1" id="Dms-Uh-bx4"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="A21-2I-L4n"/>
-                    </connections>
-                </navigationBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5n-Yd-rj7">
+                    <rect key="frame" x="153" y="432" width="114" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="131"/>
+            <point key="canvasLocation" x="119" y="-14"/>
         </view>
     </objects>
     <resources>

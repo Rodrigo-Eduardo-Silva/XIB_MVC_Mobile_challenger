@@ -2,7 +2,6 @@ import UIKit
 import SafariServices
 
 class PullrequestListViewController: UIViewController {
-
     var saveModel = SaveModel()
     @IBOutlet weak var tableView: UITableView!
     var pullrequest: [PullRequest] = []
@@ -31,12 +30,13 @@ class PullrequestListViewController: UIViewController {
         tableView.dataSource = self
         pullmodel?.loadPullRequest()
     }
+   
     func registerPullCells() {
         let nib = UINib(nibName: PullrequestListTableViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: PullrequestListTableViewCell.identifier)
     }
-
 }
+
 extension PullrequestListViewController: PullRequestListModelDelegate {
     func updatePullRequest() {
         guard let pullmodel = pullmodel else {
@@ -92,7 +92,6 @@ extension PullrequestListViewController: UITableViewDataSource {
 }
 // MARK: - Table view Delegate
 extension PullrequestListViewController: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pullrequest = pullmodel?.pullrequest[indexPath.row]
         let pathURL = pullrequest?.user.html_url ?? ""
@@ -102,7 +101,6 @@ extension PullrequestListViewController: UITableViewDelegate {
         let webviewController = SFSafariViewController(url: url)
         present(webviewController, animated: true, completion: nil)
     }
-
 }
 
 extension PullrequestListViewController: PullrequestListTableViewCellDelegate {
