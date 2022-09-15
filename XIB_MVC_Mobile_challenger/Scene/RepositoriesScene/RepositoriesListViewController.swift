@@ -1,24 +1,24 @@
 import UIKit
 import MapKit
 import Foundation
+// swiftlint:disable line_length
 
 class RepositoriesListViewController: UIViewController {
-    
+
     @IBOutlet weak var tableview: UITableView!
     var model = RepositoriesListModel()
     var totalrepositories: GitHead!
-    
     var repositories: [GitRepository] {
         model.repositories
     }
-    
+
      var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .blue
         return label
     }()
-    
+
     var language: String
     init(language: String) {
         self.language = language
@@ -34,11 +34,12 @@ class RepositoriesListViewController: UIViewController {
         label.text = "Carregando Repositórios.Aguarde..."
         tableview.delegate = self
         tableview.dataSource = self
-        tableview.register(RepositoriesListTableViewCell.nib, forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
+        tableview.register(RepositoriesListTableViewCell.nib,
+                           forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
         model.delegate = self
         model.loadRepositories(language: language)
     }
-    
+
     func showPullrequest(repository: GitRepository) {
         let repository = repositories[tableview.indexPathForSelectedRow!.row]
         let viewController = PullrequestListViewController.create(repository: repository)
@@ -67,7 +68,7 @@ extension RepositoriesListViewController: UITableViewDelegate {
         let repository = repositories[indexPath.row]
         showPullrequest(repository: repository)
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == repositories.count - 2 && !model.rechargeList && repositories.count != model.totalrepository {
             model.currentPage += 1
@@ -89,7 +90,7 @@ extension RepositoriesListViewController: RepositoriesListModelDelegate {
 extension RepositoriesListViewController: RepositoriesListServiceDelegate {
     func showMessage(message: String) {
         let alert = UIAlertController(title: message, message: "Verifique a conexão com a internet , o aplicativo será encerrado", preferredStyle: .alert)
-        let button = UIAlertAction(title: "OK", style: .default) { action in
+        let button = UIAlertAction(title: "OK", style: .default) { _ in
             exit(0)
         }
         alert.addAction(button)

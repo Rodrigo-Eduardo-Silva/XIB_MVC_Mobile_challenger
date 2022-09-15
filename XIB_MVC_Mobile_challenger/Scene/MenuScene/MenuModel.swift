@@ -1,5 +1,5 @@
 import Foundation
-enum menuOptions: String, CaseIterable {
+enum MenuModel: String, CaseIterable {
     case home = "Home"
     case java = "Java"
     case csharp = "C#"
@@ -27,6 +27,3 @@ enum menuOptions: String, CaseIterable {
         }
     }
 }
-
-
-

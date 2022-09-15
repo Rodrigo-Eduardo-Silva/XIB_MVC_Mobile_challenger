@@ -1,10 +1,10 @@
 import UIKit
 import CoreData
 import SafariServices
-
+// swiftlint:disable line_length
+// swiftlint:disable switch_case_alignment
 class SaveViewController: UIViewController {
 
-    
     var fetchResultController: NSFetchedResultsController<PullrequestSaved>!
     @IBOutlet weak var tableView: UITableView!
     init() {
@@ -85,17 +85,17 @@ extension SaveViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
             case .insert:
-            tableView.reloadData()
+                tableView.reloadData()
             case .delete:
-            if let indexPath = indexPath {
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
             case .move:
-            tableView.reloadData()
+                tableView.reloadData()
             case .update:
-            tableView.reloadData()
-        @unknown default:
-            print("erro")
+                tableView.reloadData()
+            @unknown default:
+                print("erro")
         }
     }
 

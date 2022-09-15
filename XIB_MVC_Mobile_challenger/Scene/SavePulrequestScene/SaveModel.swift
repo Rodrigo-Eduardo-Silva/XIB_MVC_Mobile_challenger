@@ -3,7 +3,7 @@ import UIKit
 import CoreData
 class SaveModel {
     var pullrequest: PullrequestSaved!
-    
+
     func savePullrequest(pullrequest: PullRequest) {
         self.pullrequest = PullrequestSaved(context: context)
         self.pullrequest.title = pullrequest.title

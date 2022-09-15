@@ -20,7 +20,9 @@ class PullRequestListModel {
     }
     func loadPullRequest() {
         rechargeList = true
-        service.loadPullRequest(page: currentPage, owner: gitRepository.owner.login, repository: gitRepository.name) { pull in
+        service.loadPullRequest(page: currentPage,
+                                owner: gitRepository.owner.login,
+                                repository: gitRepository.name) { pull in
                 if let pull = pull {
                     self.pullrequest += pull
                     self.totalpullrequest = pull.count

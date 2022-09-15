@@ -3,7 +3,7 @@ class PullRequestListService {
     private let basePath = "https://api.github.com/search/repositories?"
     private let privateToken = "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"
     private let teste = "https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1"
-    private let per_page = 25
+    private let perPage = 25
     private let session: URLSession
     init() {
         let config = URLSessionConfiguration.default
@@ -12,10 +12,10 @@ class PullRequestListService {
         session = URLSession(configuration: config)
     }
     func loadPullRequest(page: Int, owner: String, repository: String, completion: @escaping ([PullRequest]?) -> Void) {
-        let query = "https://api.github.com/repos/\(owner)/\(repository)/pulls?page=\(page)&per_page=\(per_page)"
+        let query = "https://api.github.com/repos/\(owner)/\(repository)/pulls?page=\(page)&per_page=\(perPage)"
         print(query)
-        guard let url = URL(string: query) else {return}
-        let dataTask = session.dataTask(with: url) { data, response, error in
+        guard let requestUrl = URL(string: query) else {return}
+        let dataTask = session.dataTask(with: requestUrl) { data, response, error in
             if error == nil {
                 guard let response = response as? HTTPURLResponse else {return}
                 if response.statusCode == 200 {

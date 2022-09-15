@@ -1,5 +1,6 @@
 import Kingfisher
 import UIKit
+// swiftlint:disable line_length
 protocol PullrequestListTableViewCellDelegate: AnyObject {
     func save(index: Int)
 }
@@ -9,7 +10,7 @@ class PullrequestListTableViewCell: UITableViewCell {
     let saveModel = SaveModel()
     weak var delegate: PullrequestListTableViewCellDelegate?
     private var index: Int = -1
-    @IBOutlet weak var SaveButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var avatarPullimage: UIImageView!
@@ -23,7 +24,7 @@ class PullrequestListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func preparePullrequest(with pullrequest: PullRequest, at index: Int) {
         self.index = index
         titleLabel.text = pullrequest.title
@@ -32,15 +33,15 @@ class PullrequestListTableViewCell: UITableViewCell {
         } else {
             bodyLabel.text = " Just a PullRequest Body"
         }
-        
+
         if let url = URL(string: pullrequest.user.avatar_url) {
             avatarPullimage.kf.setImage(with: url, placeholder: UIImage(named: "person.wave.2.fill"), options: nil, completionHandler: nil)
             avatarPullimage.layer.cornerRadius = avatarPullimage.frame.size.height/2
         }
     }
 
-    @IBAction func Save(_ sender: Any) {
+    @IBAction func save(_ sender: Any) {
         delegate?.save(index: index)
-        SaveButton.isEnabled = false
+        saveButton.isEnabled = false
     }
 }

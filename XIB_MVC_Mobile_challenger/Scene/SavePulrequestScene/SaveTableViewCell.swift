@@ -21,7 +21,10 @@ class SaveTableViewCell: UITableViewCell {
         titleLabel.text = pullrequest.title
         bodyLabel.text = pullrequest.body == "" ? bodyLabel.text : "Just Pullrequest body"
         if let url = URL(string: pullrequest.avatar_url ?? "None") {
-            avatarPullimage.kf.setImage(with: url, placeholder: UIImage(named: "person.wave.2.fill"), options: nil, completionHandler: nil)
+            avatarPullimage.kf.setImage(with: url,
+                                        placeholder: UIImage(named: "person.wave.2.fill"),
+                                        options: nil,
+                                        completionHandler: nil)
             avatarPullimage.layer.cornerRadius = avatarPullimage.frame.size.height/2
         }
 

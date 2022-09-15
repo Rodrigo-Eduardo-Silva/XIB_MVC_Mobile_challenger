@@ -1,5 +1,6 @@
 import UIKit
 import SafariServices
+// swiftlint:disable line_length
 
 class PullrequestListViewController: UIViewController {
     var saveModel = SaveModel()
@@ -30,7 +31,7 @@ class PullrequestListViewController: UIViewController {
         tableView.dataSource = self
         pullmodel?.loadPullRequest()
     }
-   
+
     func registerPullCells() {
         let nib = UINib(nibName: PullrequestListTableViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: PullrequestListTableViewCell.identifier)
@@ -110,6 +111,6 @@ extension PullrequestListViewController: PullrequestListTableViewCellDelegate {
         }
         saveModel.savePullrequest(pullrequest: pullrequest)
         saveAltert(with: pullrequest)
-        print("Pullrequest Salvo",index)
+        print("Pullrequest Salvo", index)
     }
 }

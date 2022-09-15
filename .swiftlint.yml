@@ -1,0 +1,14 @@
+
+identifier_name:
+  min_length: # only min_length
+    error: 3 # only error
+  excluded: # excluded via string array
+    - avatar_url
+    - repos_url
+    - full_name
+    - stargazers_count
+    - total_count
+    - avatar_url
+    - html_url
+    - id
+

@@ -51,7 +51,7 @@
                             <color key="baseForegroundColor" white="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
                         <connections>
-                            <action selector="Save:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lQT-zb-89W"/>
+                            <action selector="save:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WrS-Db-qc9"/>
                         </connections>
                     </button>
                 </subviews>
@@ -72,9 +72,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="SaveButton" destination="9Pp-TM-UxW" id="Cox-sP-l9j"/>
                 <outlet property="avatarPullimage" destination="HUW-dD-Xaz" id="YuO-VL-RNs"/>
                 <outlet property="bodyLabel" destination="rkB-j8-crk" id="buK-8L-Yk6"/>
+                <outlet property="saveButton" destination="9Pp-TM-UxW" id="8de-Uc-v2M"/>
                 <outlet property="titleLabel" destination="1Sx-10-Egq" id="XQd-3M-35A"/>
             </connections>
             <point key="canvasLocation" x="-429.71014492753625" y="170.42410714285714"/>

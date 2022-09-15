@@ -1,23 +1,23 @@
 import UIKit
 import SideMenu
 protocol MenuViewControllerDelegate: AnyObject {
-    func didSelectMenuOption(named: menuOptions)
+    func didSelectMenuOption(named: MenuModel)
 }
 
 class MenuViewController: UIViewController {
-    
+
     @IBOutlet weak var tableView: UITableView!
-    private let menuOptions: [menuOptions]
+    private let menuOptions: [MenuModel]
     private let color = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
     weak var delegate: MenuViewControllerDelegate?
-    
-    init(with menuOptions: [menuOptions]){
+
+    init(with menuOptions: [MenuModel]) {
         self.menuOptions = menuOptions
-        
+
         super.init(nibName: nil, bundle: nil)
- 
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -39,7 +39,7 @@ extension MenuViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.backgroundColor = color
         cell.textLabel?.textColor = .white
-        cell.imageView?.image = UIImage(systemName:menuOptions[indexPath.row].imageName)
+        cell.imageView?.image = UIImage(systemName: menuOptions[indexPath.row].imageName)
         print(menuOptions[indexPath.row].imageName)
         cell.textLabel?.text = menuOptions[indexPath.row].rawValue
         return cell

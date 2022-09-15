@@ -49,6 +49,7 @@
 		334434122873A97100B0F3B6 /* PullrequestListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334434102873A97100B0F3B6 /* PullrequestListViewController.xib */; };
 		33B2322C28CAB9A600AD0A0C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B2322A28CAB9A600AD0A0C /* HomeViewController.swift */; };
 		33B2322D28CAB9A600AD0A0C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B2322B28CAB9A600AD0A0C /* HomeViewController.xib */; };
+		33BEA90D28D2B2980096910B /* RepositoriesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEA90C28D2B2980096910B /* RepositoriesListCoordinator.swift */; };
 		33C3188228C801E8003C120F /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3188128C801E8003C120F /* MenuModel.swift */; };
 		33C7681428D141E4008FDDC9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C7681228D141E4008FDDC9 /* ContainerViewController.swift */; };
 		33C7681528D141E4008FDDC9 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C7681328D141E4008FDDC9 /* ContainerViewController.xib */; };
@@ -97,6 +98,7 @@
 		334434102873A97100B0F3B6 /* PullrequestListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullrequestListViewController.xib; sourceTree = "<group>"; };
 		33B2322A28CAB9A600AD0A0C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33B2322B28CAB9A600AD0A0C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		33BEA90C28D2B2980096910B /* RepositoriesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListCoordinator.swift; sourceTree = "<group>"; };
 		33C3188128C801E8003C120F /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		33C7681228D141E4008FDDC9 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		33C7681328D141E4008FDDC9 /* ContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				333B3A4D28614CEC000BF8D1 /* RepositoriesListTableViewCell.xib */,
 				333B3A4C28614CEC000BF8D1 /* RepositoriesListTableViewCell.swift */,
 				33231EF3286531D60034D6D8 /* RepositoriesListModel.swift */,
+				33BEA90C28D2B2980096910B /* RepositoriesListCoordinator.swift */,
 			);
 			path = RepositoriesScene;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				333B3A2B2861453A000BF8D1 /* Sources */,
 				333B3A2C2861453A000BF8D1 /* Frameworks */,
 				333B3A2D2861453A000BF8D1 /* Resources */,
+				33C7681628D15495008FDDC9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -342,6 +346,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33C7681628D15495008FDDC9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		333B3A2B2861453A000BF8D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -352,6 +376,7 @@
 				33C7681428D141E4008FDDC9 /* ContainerViewController.swift in Sources */,
 				334066A028D00BA6001D05DF /* AppCoordinator.swift in Sources */,
 				33231EE928652FD30034D6D8 /* GitHead.swift in Sources */,
+				33BEA90D28D2B2980096910B /* RepositoriesListCoordinator.swift in Sources */,
 				331B9D52287CCFD100EEB029 /* SaveViewController.swift in Sources */,
 				33231EED286530770034D6D8 /* Owner.swift in Sources */,
 				33C3188228C801E8003C120F /* MenuModel.swift in Sources */,
