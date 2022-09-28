@@ -1,19 +1,14 @@
 import Foundation
 import UIKit
+import SideMenu
 
-class AppCoordinator: Coordinator {
+class AppCoordinator {
     var navigationController: UINavigationController?
-    let window: UIWindow
     var childCoordinator: Coordinator?
-
+    let window: UIWindow
     init(window: UIWindow, navigationController: UINavigationController) {
         self.window = window
         self.navigationController = navigationController
-
-    }
-
-    func eventOccured(with type: Event) {
-
     }
 
     func start() {
@@ -22,13 +17,13 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
-        startContainer(navigationController)
+       startContainer(navigationController)
     }
 
     fileprivate func startContainer(_ navigationController: UINavigationController) {
         let containerCoordinator = ContainerCoordinator(navigationController: navigationController)
         containerCoordinator.start()
-        self.childCoordinator = containerCoordinator
+        childCoordinator = containerCoordinator
     }
 
 }

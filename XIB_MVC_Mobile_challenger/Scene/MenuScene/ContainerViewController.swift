@@ -2,35 +2,42 @@ import UIKit
 import SideMenu
 import SwiftUI
 protocol ContainerViewControllerDelegate: AnyObject {
-    func showSideMenu()
+    func showMenu(view: UIView)
 }
 
 class ContainerViewController: UIViewController {
     private var sideMenu: SideMenuNavigationController?
+    var repositoriesCoordinator: RepositoriesListCoordinator?
+    weak var delegate: ContainerViewControllerDelegate?
     @IBOutlet weak var containerTabbar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let menu = MenuViewController(with: MenuModel.allCases)
-        menu.delegate = self
-        sideMenu = SideMenuNavigationController(rootViewController: menu)
-        sideMenu?.leftSide = true
-        SideMenuManager.default.leftMenuNavigationController = sideMenu
-        SideMenuManager.default.addPanGestureToPresent(toView: view)
-        sideMenu?.menuWidth = 300
+//        let menu = MenuViewController(with: MenuModel.allCases)
+//        menu.delegate = self
+//        sideMenu = SideMenuNavigationController(rootViewController: menu)
+//        sideMenu?.leftSide = true
+//        SideMenuManager.default.leftMenuNavigationController = sideMenu
+//        SideMenuManager.default.addPanGestureToPresent(toView: view)
+//        sideMenu?.menuWidth = 300
+        repositoriesCoordinator?.delegate = self
     }
 
     func didTapMenuButton() {
-        guard let viewController = sideMenu else {
-            fatalError()
-        }
-        navigationController?.present(viewController, animated: true, completion: nil)
+        delegate?.showMenu(view: view)
+//        guard let viewController = sideMenu else {
+//            fatalError()
+//        }
+//        navigationController?.present(viewController, animated: true, completion: nil)
     }
 
     func showRepositories(with language: String) {
-        let viewController = RepositoriesListViewController(language: language)
-        addChild(viewController)
-        view.addSubview(viewController.view)
-        viewController.didMove(toParent: self)
+        let navigation = UINavigationController()
+        let repositoryView = RepositoriesListCoordinator(navigationController: navigation, language: language)
+        repositoryView.start()
+//        let viewController = RepositoriesListViewController(language: language)
+//        addChild(viewController)
+//        view.addSubview(viewController.view)
+//        viewController.didMove(toParent: self)
     }
 
     func showSaveRepository() {
@@ -49,7 +56,6 @@ class ContainerViewController: UIViewController {
     @IBAction func shoeSideMenu(_ sender: Any) {
         didTapMenuButton()
     }
-
 }
 
 extension ContainerViewController: MenuViewControllerDelegate {
@@ -72,5 +78,13 @@ extension ContainerViewController: MenuViewControllerDelegate {
                 return
             }
         })
+    }
+}
+
+extension ContainerViewController: RepositoriesListCoordinatorDelegate {
+    func addChildViewController(_ viewController: RepositoriesListViewController) {
+        addChild(viewController)
+        view.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
     }
 }

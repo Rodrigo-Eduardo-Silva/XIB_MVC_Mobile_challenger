@@ -1,24 +1,31 @@
 import Foundation
 import UIKit
+protocol RepositoriesListCoordinatorDelegate: AnyObject {
+    func addChildViewController(_ viewController: RepositoriesListViewController)
+}
 
 class RepositoriesListCoordinator: Coordinator {
-    var navigationController: UINavigationController?
+    weak var delegate: RepositoriesListCoordinatorDelegate?
+    var navigationController: UINavigationController
+    var language: String
     private var viewController: RepositoriesListViewController?
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, language: String) {
+        self.language = language
         self.navigationController = navigationController
     }
-    func eventOccured(with type: Event) {
-        
-    }
+    
     func start() {
-        let repositoriesViewController = makeRepositoriesListViewController(langage: <#T##String#>)
-        
+        let viewController = RepositoriesListViewController(language: language)
+//        self.viewController = viewController
+        delegate?.addChildViewController(viewController)
+        navigationController.pushViewController(viewController, animated: true)
     }
-    private func makeRepositoriesListViewController(langage: String) -> RepositoriesListViewController {
-        let viewController = RepositoriesListViewController(language: langage)
-        let model = RepositoriesListModel()
-        model.delegate = viewController
-        viewController.model = model
+    
+    func makeRepositoriesListViewController() -> RepositoriesListViewController {
+        let viewController = RepositoriesListViewController(language: language)
+//        let model = RepositoriesListModel()
+//        model.delegate = viewController
+//        viewController.model = model
         return viewController
     }
 }

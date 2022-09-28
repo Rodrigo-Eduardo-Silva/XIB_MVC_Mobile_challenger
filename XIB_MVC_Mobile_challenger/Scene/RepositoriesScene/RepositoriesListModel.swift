@@ -20,7 +20,7 @@ class RepositoriesListModel {
     }
     func loadRepositories(language: String) {
         rechargeList = true
-        RepositoriesListService().loadRepositories(page: currentPage, language: language) { [weak self] repository in
+        service.loadRepositories(page: currentPage, language: language) { [weak self] repository in
             if let repository = repository {
                 self?.repositories += repository.items
                 self?.totalrepository = repository.total_count
