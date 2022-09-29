@@ -13,19 +13,19 @@ class RepositoriesListCoordinator: Coordinator {
         self.language = language
         self.navigationController = navigationController
     }
-    
+
     func start() {
         let viewController = RepositoriesListViewController(language: language)
 //        self.viewController = viewController
         delegate?.addChildViewController(viewController)
         navigationController.pushViewController(viewController, animated: true)
     }
-    
+
     func makeRepositoriesListViewController() -> RepositoriesListViewController {
         let viewController = RepositoriesListViewController(language: language)
-//        let model = RepositoriesListModel()
-//        model.delegate = viewController
-//        viewController.model = model
+        let model = RepositoriesListModel()
+        model.delegate = viewController
+        viewController.model = model
         return viewController
     }
 }
