@@ -2,14 +2,19 @@ import UIKit
 import MapKit
 import Foundation
 // swiftlint:disable line_length
+protocol RepositoriesListViewControllerDelegate: AnyObject {
+    func didSelectRepository(repository: GitRepository)
+}
 
 class RepositoriesListViewController: UIViewController {
 
+    weak var delegate: RepositoriesListViewControllerDelegate?
     @IBOutlet weak var tableview: UITableView!
-    var model = RepositoriesListModel()
+
+    var model: RepositoriesListModel?
     var totalrepositories: GitHead!
     var repositories: [GitRepository] {
-        model.repositories
+        model?.repositories ?? []
     }
 
      var label: UILabel = {
@@ -36,14 +41,16 @@ class RepositoriesListViewController: UIViewController {
         tableview.dataSource = self
         tableview.register(RepositoriesListTableViewCell.nib,
                            forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
-        model.delegate = self
-        model.loadRepositories(language: language)
+       // model?.delegate = self
+        loadRepositories()
+    }
+
+    private func loadRepositories() {
+        model?.loadRepositories(language: language)
     }
 
     func showPullrequest(repository: GitRepository) {
-        let repository = repositories[tableview.indexPathForSelectedRow!.row]
-        let viewController = PullrequestListViewController.create(repository: repository)
-        navigationController?.pushViewController(viewController, animated: true)
+        delegate?.didSelectRepository(repository: repository)
     }
 }
 // MARK: - Table view data source
@@ -70,10 +77,10 @@ extension RepositoriesListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == repositories.count - 2 && !model.rechargeList && repositories.count != model.totalrepository {
-            model.currentPage += 1
-            model.loadRepositories(language: language)
-            print("Total de Repositórios: \(model.totalrepository) , Já Inclusos : \(repositories.count)")
+        if indexPath.row == repositories.count - 2 && !(model?.rechargeList ?? true) && repositories.count != model?.totalrepository {
+            model?.currentPage += 1
+            model?.loadRepositories(language: language)
+            print("Total de Repositórios: \(String(describing: model?.totalrepository)) , Já Inclusos : \(repositories.count)")
         }
     }
 }
@@ -82,7 +89,7 @@ extension RepositoriesListViewController: RepositoriesListModelDelegate {
     func updateRepositoriesModel() {
         DispatchQueue.main.async { [weak self] in
             self?.tableview.reloadData()
-            self?.model.rechargeList = false
+            self?.model?.rechargeList = false
          }
     }
 }

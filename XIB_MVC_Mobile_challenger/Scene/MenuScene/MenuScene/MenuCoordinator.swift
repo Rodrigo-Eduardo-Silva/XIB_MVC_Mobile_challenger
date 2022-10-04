@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 import SideMenu
 import SwiftUI
@@ -7,6 +6,7 @@ import SwiftUI
 class MenuCoordinator: Coordinator {
     var navigationController: UINavigationController
     var view: UIView
+    var childCoordinator: Coordinator?
     private var sideMenu: SideMenuNavigationController?
     init(navigationController: UINavigationController, view: UIView) {
         self.navigationController = navigationController
@@ -35,6 +35,7 @@ class MenuCoordinator: Coordinator {
     private func showRepositories(with language: String) {
         let repositoryCoordinator = RepositoriesListCoordinator(navigationController: self.navigationController, language: language)
         repositoryCoordinator.start()
+        childCoordinator = repositoryCoordinator
     }
 
     private func showSavedPullrequest() {

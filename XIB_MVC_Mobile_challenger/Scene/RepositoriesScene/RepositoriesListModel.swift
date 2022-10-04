@@ -18,6 +18,7 @@ class RepositoriesListModel {
         totalrepository = 1
         rechargeList = false
     }
+
     func loadRepositories(language: String) {
         rechargeList = true
         service.loadRepositories(page: currentPage, language: language) { [weak self] repository in

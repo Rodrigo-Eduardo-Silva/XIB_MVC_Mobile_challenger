@@ -2,8 +2,13 @@ import UIKit
 import SafariServices
 // swiftlint:disable line_length
 
+protocol PullrequestListViewControllerDelegate: AnyObject {
+    func showDetailPullrequest(url: URL)
+}
+
 class PullrequestListViewController: UIViewController {
     var saveModel = SaveModel()
+    weak var delegate: PullrequestListViewControllerDelegate?
     @IBOutlet weak var tableView: UITableView!
     var pullrequest: [PullRequest] = []
     var pullmodel: PullRequestListModel?
@@ -82,6 +87,7 @@ extension PullrequestListViewController: UITableViewDataSource {
         cell.delegate = self
         return cell
     }
+
     func saveAltert(with pullrequest: PullRequest) {
         let title = "Pullrequest Salvo"
         let alert = UIAlertController(title: title, message: pullrequest.title, preferredStyle: .alert)
@@ -99,8 +105,7 @@ extension PullrequestListViewController: UITableViewDelegate {
         guard let url = URL(string: pathURL) else {
             fatalError()
         }
-        let webviewController = SFSafariViewController(url: url)
-        present(webviewController, animated: true, completion: nil)
+        delegate?.showDetailPullrequest(url: url)
     }
 }
 

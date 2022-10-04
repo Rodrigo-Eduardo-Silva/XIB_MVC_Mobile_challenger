@@ -47,6 +47,7 @@
 		33419E4C28751B8F009AACE1 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33419E4A28751B8F009AACE1 /* MenuViewController.xib */; };
 		334434112873A97100B0F3B6 /* PullrequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344340F2873A97100B0F3B6 /* PullrequestListViewController.swift */; };
 		334434122873A97100B0F3B6 /* PullrequestListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334434102873A97100B0F3B6 /* PullrequestListViewController.xib */; };
+		334CF77628E66BA30037F239 /* PullrequestListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CF77528E66BA30037F239 /* PullrequestListCoordinator.swift */; };
 		33A8855628E531EC00CB5137 /* SaveCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8855528E531EC00CB5137 /* SaveCoordinator.swift */; };
 		33B2322C28CAB9A600AD0A0C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B2322A28CAB9A600AD0A0C /* HomeViewController.swift */; };
 		33B2322D28CAB9A600AD0A0C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B2322B28CAB9A600AD0A0C /* HomeViewController.xib */; };
@@ -98,6 +99,7 @@
 		33419E4A28751B8F009AACE1 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		3344340F2873A97100B0F3B6 /* PullrequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListViewController.swift; sourceTree = "<group>"; };
 		334434102873A97100B0F3B6 /* PullrequestListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullrequestListViewController.xib; sourceTree = "<group>"; };
+		334CF77528E66BA30037F239 /* PullrequestListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullrequestListCoordinator.swift; sourceTree = "<group>"; };
 		33A8855528E531EC00CB5137 /* SaveCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCoordinator.swift; sourceTree = "<group>"; };
 		33B2322A28CAB9A600AD0A0C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33B2322B28CAB9A600AD0A0C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				3344340F2873A97100B0F3B6 /* PullrequestListViewController.swift */,
+				334CF77528E66BA30037F239 /* PullrequestListCoordinator.swift */,
 				334434102873A97100B0F3B6 /* PullrequestListViewController.xib */,
 				333CD3C0286A98F400271368 /* PullrequestListTableViewCell.swift */,
 				333CD3C1286A98F400271368 /* PullrequestListTableViewCell.xib */,
@@ -409,6 +412,7 @@
 				33231EE928652FD30034D6D8 /* GitHead.swift in Sources */,
 				33C2419228DA9CA800108EC4 /* MenuCoordinator.swift in Sources */,
 				33BEA90D28D2B2980096910B /* RepositoriesListCoordinator.swift in Sources */,
+				334CF77628E66BA30037F239 /* PullrequestListCoordinator.swift in Sources */,
 				331B9D52287CCFD100EEB029 /* SaveViewController.swift in Sources */,
 				33231EED286530770034D6D8 /* Owner.swift in Sources */,
 				33C3188228C801E8003C120F /* MenuModel.swift in Sources */,

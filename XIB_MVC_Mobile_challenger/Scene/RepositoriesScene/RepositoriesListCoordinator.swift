@@ -1,13 +1,10 @@
 import Foundation
 import UIKit
-protocol RepositoriesListCoordinatorDelegate: AnyObject {
-    func addChildViewController(_ viewController: RepositoriesListViewController)
-}
 
 class RepositoriesListCoordinator: Coordinator {
-    weak var delegate: RepositoriesListCoordinatorDelegate?
     var navigationController: UINavigationController
     var language: String
+    var childCoordinator: Coordinator?
     private var viewController: RepositoriesListViewController?
     init(navigationController: UINavigationController, language: String) {
         self.language = language
@@ -15,9 +12,8 @@ class RepositoriesListCoordinator: Coordinator {
     }
 
     func start() {
-        let viewController = RepositoriesListViewController(language: language)
-//        self.viewController = viewController
-        delegate?.addChildViewController(viewController)
+        let viewController = makeRepositoriesListViewController()
+        self.viewController = viewController
         navigationController.pushViewController(viewController, animated: true)
     }
 
@@ -26,6 +22,15 @@ class RepositoriesListCoordinator: Coordinator {
         let model = RepositoriesListModel()
         model.delegate = viewController
         viewController.model = model
+        viewController.delegate = self
         return viewController
+    }
+}
+
+extension RepositoriesListCoordinator: RepositoriesListViewControllerDelegate {
+     func didSelectRepository(repository: GitRepository) {
+        let coordinator = PullrequestListCoordinator(navigationController: navigationController, repository: repository)
+        coordinator.start()
+        self.childCoordinator = coordinator
     }
 }
