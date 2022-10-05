@@ -39,7 +39,7 @@ extension MenuViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.backgroundColor = color
         cell.textLabel?.textColor = .white
-        cell.imageView?.image = UIImage(systemName: menuOptions[indexPath.row].imageName)
+        cell.imageView?.image = UIImage(named: menuOptions[indexPath.row].imageName)
         print(menuOptions[indexPath.row].imageName)
         cell.textLabel?.text = menuOptions[indexPath.row].rawValue
         return cell

@@ -17,7 +17,7 @@ enum MenuModel: String, CaseIterable {
         case .csharp:
             return "csharp"
         case .swift:
-            return "swift"
+            return "swift.png"
         case .python:
             return "Python.svg.png"
         case .saved:
