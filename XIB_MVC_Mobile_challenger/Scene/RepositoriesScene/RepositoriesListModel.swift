@@ -3,6 +3,7 @@ import SwiftUI
 
 protocol RepositoriesListModelDelegate: AnyObject {
     func updateRepositoriesModel()
+    func internetMessage(message: String)
 }
 
 class RepositoriesListModel {
@@ -17,6 +18,7 @@ class RepositoriesListModel {
         self.currentPage = 1
         totalrepository = 1
         rechargeList = false
+        service.delegate = self
     }
 
     func loadRepositories(language: String) {
@@ -25,8 +27,14 @@ class RepositoriesListModel {
             if let repository = repository {
                 self?.repositories += repository.items
                 self?.totalrepository = repository.total_count
-           }
+            }
              self?.delegate?.updateRepositoriesModel()
         }
+    }
+}
+
+extension RepositoriesListModel: RepositoriesListServiceDelegate {
+    func showMessage(message: String) {
+        self.delegate?.internetMessage(message: message)
     }
 }

@@ -41,6 +41,7 @@ class RepositoriesListViewController: UIViewController {
         tableview.dataSource = self
         tableview.register(RepositoriesListTableViewCell.nib,
                            forCellReuseIdentifier: RepositoriesListTableViewCell.cell)
+
        // model?.delegate = self
         loadRepositories()
     }
@@ -86,22 +87,22 @@ extension RepositoriesListViewController: UITableViewDelegate {
 }
 
 extension RepositoriesListViewController: RepositoriesListModelDelegate {
+    func internetMessage(message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: message, message: "Verifique a conexão com a internet , o aplicativo será encerrado", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: .default) { _ in
+                exit(0)
+            }
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: nil)
+            print("teste")
+        }
+    }
+
     func updateRepositoriesModel() {
         DispatchQueue.main.async { [weak self] in
             self?.tableview.reloadData()
             self?.model?.rechargeList = false
          }
-    }
-}
-
-extension RepositoriesListViewController: RepositoriesListServiceDelegate {
-    func showMessage(message: String) {
-        let alert = UIAlertController(title: message, message: "Verifique a conexão com a internet , o aplicativo será encerrado", preferredStyle: .alert)
-        let button = UIAlertAction(title: "OK", style: .default) { _ in
-            exit(0)
-        }
-        alert.addAction(button)
-        self.present(alert, animated: true, completion: nil)
-        print("teste")
     }
 }
